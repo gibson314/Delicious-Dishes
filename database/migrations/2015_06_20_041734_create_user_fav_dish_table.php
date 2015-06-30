@@ -14,9 +14,9 @@ class CreateUserFavDishTable extends Migration
     {
         //用户收藏菜谱 枢纽表
         Schema::create('user_fav_dish', function (Blueprint $table) {
-            $table -> string ('user_id');
-            $table -> string ('dish_id');
-
+            $table -> integer ('user_id');
+            $table -> integer ('dish_id');
+            $table -> primary (['user_id', 'dish_id']);
         });
     }
 

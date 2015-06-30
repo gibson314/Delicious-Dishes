@@ -15,7 +15,17 @@
 //    return view('welcome');
 //});
 
+
+//主页
 Route :: get ('/', 'HomeController@index');
+//about us
 Route :: get ('/about', 'HomeController@about');
+
+//用户注册与登录
 Route :: controller ('users', 'UsersController');
+
+
+//页面显示序号为id的菜谱
+//Route :: get ('/dishes/{id}', 'DishesController');
+
 

@@ -13,8 +13,9 @@ class CreateUserFavFoodTable extends Migration
     public function up()
     {
         Schema::create('user_fav_food', function (Blueprint $table) {
-            $table -> string ('user_id');
-            $table -> string ('food_id');
+            $table -> integer ('user_id');
+            $table -> string ('food_name');
+            $table -> primary (['user_id', 'food_name']);
         });
     }
 

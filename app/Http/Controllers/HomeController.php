@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,8 @@ class HomeController extends Controller
         return view ('home.index');
     }
     public function about () {
-        return view ('home.about');
+        $message = DB::table ('users')->get;
+        return view ('home.about', compact('message'));
     }
 }
 

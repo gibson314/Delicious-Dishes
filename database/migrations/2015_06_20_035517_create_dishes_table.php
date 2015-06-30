@@ -16,30 +16,22 @@ class CreateDishesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->text('steps');
-            $table->text ('utensil');
-            $table->string ('type');
-            $table->string ('photo');
+            $table->text ('intro');
+
+            $table->string('tip');
+            $table->string('tag');
+            $table->string('TitleImg');
 
 
-            $table-> integer ('upload_user_id');          //从属的用户
+            $table-> string ('author');          //从属的用户
             //$table -> integer ('favourite_user_id');
             //$table -> integer ('comment_user_id');
 
 
-            $table->foreign('upload_user_id')//生成外键，删除用户时删除所有文章
-                ->reference('id')
-                ->on('users')
-                ->onDelete('cascade');
-
-
-
-
-
-
-
-
-
+//            $table->foreign('upload_user_name')//生成外键，删除用户时删除所有文章
+//                ->reference('username')
+//                ->on('users')
+//                ->onDelete('cascade');
         });
     }
 

@@ -11,6 +11,7 @@
     <style>
         body{
             padding-top: 50px;
+            background-color: #CCC;
         }
     </style>
 
@@ -25,7 +26,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{url('/')}}">Home</a></li>
+                <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{url('/about')}}">About</a></li>
                 <li><a href="{{url('/')}}">Contact</a></li>
             </ul>
@@ -43,7 +44,10 @@
 </nav>
 
 
-<h1></h1>
+
+
+
+
 <div class="container">
     @yield ('content')
 </div>
