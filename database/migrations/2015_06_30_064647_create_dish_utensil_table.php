@@ -17,6 +17,7 @@ class CreateDishUtensilTable extends Migration
 //            $table->timestamps();
             $table -> integer ('dish_id');
             $table -> string ('utensil_name');
+            $table -> primary(['utensil_name', 'dish_id']);
         });
     }
 

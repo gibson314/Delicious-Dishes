@@ -14,8 +14,8 @@ class CreateDishesTable extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->string('name');
+            $table -> string('name');
+            $table->date('publish_date');
             $table->text ('intro');
 
             $table->string('tip');
@@ -32,6 +32,9 @@ class CreateDishesTable extends Migration
 //                ->reference('username')
 //                ->on('users')
 //                ->onDelete('cascade');
+            
+            $table->timestamps();
+
         });
     }
 

@@ -29,3 +29,7 @@ Route :: controller ('users', 'UsersController');
 //Route :: get ('/dishes/{id}', 'DishesController');
 
 
+Route :: get ('/dishes/create', 'DishesController@create');
+Route :: get ('/dishes', 'DishesController@index');
+Route :: get ('/dishes/{id}', 'DishesController@show');
+Route :: post ('/dishes/store', 'DishesController@store');
