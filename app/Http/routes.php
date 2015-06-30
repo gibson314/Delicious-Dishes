@@ -25,11 +25,20 @@ Route :: get ('/about', 'HomeController@about');
 Route :: controller ('users', 'UsersController');
 
 
-//页面显示序号为id的菜谱
-//Route :: get ('/dishes/{id}', 'DishesController');
+//菜谱群组
+Route::group(['prefix' => 'dishes'
+//    , 'middleware' => 'authority'
+], function() {
+    Route :: get ('create', 'DishesController@create');
+    Route :: get ('/', 'DishesController@index');
+    Route :: get ('{id}', 'DishesController@show');
+    Route :: post ('store', 'DishesController@store');
+    Route :: post ('update', 'DishesController@update');
+    Route :: get ('edit/{id}', 'DishesController@edit');
+});
 
-
-Route :: get ('/dishes/create', 'DishesController@create');
-Route :: get ('/dishes', 'DishesController@index');
-Route :: get ('/dishes/{id}', 'DishesController@show');
-Route :: post ('/dishes/store', 'DishesController@store');
+//Route :: get ('/dishes/create', 'DishesController@create');
+//Route :: get ('/dishes', 'DishesController@index');
+//Route :: get ('/dishes/{id}', 'DishesController@show');
+//Route :: post ('/dishes/store', 'DishesController@store');
+//Route::get ('/dishes/edit/{id}', );

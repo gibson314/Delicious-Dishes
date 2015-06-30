@@ -43,5 +43,5 @@
     {{--<li>常住地： {{$user->place}}</li>--}}
 
     <h4><a href="{{ url('/users/moreinfo') }}">{{ '修改资料'}}</a></h4>
-
+    <h4><a href="{{ url('/users/dishes') }}">{{ '我的菜谱'}}</a></h4>
 @endsection

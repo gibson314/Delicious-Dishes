@@ -120,4 +120,20 @@ class UsersController extends Controller
             return view ('users.profile', compact ('user'));
         }
     }
+
+
+    public function getDishes () {
+        $user = Auth::user();
+        $dishes = User::find($user->id) -> dishes;
+        return view ('users.getdishes', compact('dishes'));
+    }
 }
+
+
+
+
+
+
+
+
+

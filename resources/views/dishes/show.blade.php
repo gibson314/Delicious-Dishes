@@ -2,6 +2,7 @@
 @extends('layouts.master')
 @section('content')
     <h1>菜谱信息</h1>
+    <a href="{{url('/dishes/edit', $dish->id)}}">编辑</a>
     <div class="container">
         <table class="table">
             <tbody>

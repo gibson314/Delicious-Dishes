@@ -35,8 +35,27 @@ class DishesController extends Controller
 
         $dish -> save ();
 
-        return redirect ('/about');            //NEED change
+        return redirect ('/users/dishes');
     }
+
+    public function update ($id, Request $request) {
+        //validate the content
+
+        $dish = Dish::find($id);
+        $dish -> name = $request['name'];
+        $dish -> intro = $request['intro'];
+        $dish -> tag = $request['tag'];
+        $dish -> tip = $request['tip'];
+        $dish -> TitleImg = $request ['TitleImg'];
+
+//        $dish -> publish_date = Carbon::now();
+
+        $dish -> save ();
+
+        return redirect ('/users/dishes');
+    }
+
+
 
     public function show ($id) {
         $dish = Dish::find($id);
@@ -44,5 +63,11 @@ class DishesController extends Controller
         return view ('dishes.show', compact ('dish'));
     }
 
+
+    public function edit ($id) {
+        $dish = Dish::find($id);
+
+        return view ('dishes.edit', compact ('dish'));
+    }
 
 }
