@@ -47,7 +47,7 @@ class UsersController extends Controller
             'username'=>$request['username'],
             'password'=>$request['password']
         ]);
-        return view ('users/moreinfo');
+        return redirect ('users/profile');
 
     }
 
@@ -72,7 +72,7 @@ class UsersController extends Controller
         }
         else {
             $message = "用户名或密码错误";
-            return view ('users/login', compact('message'));
+            return view ('users.login', compact('message'));
         }
 
     }
@@ -85,7 +85,8 @@ class UsersController extends Controller
 
     //填写更多个人信息
     public function getMoreinfo () {
-        return view ('users.moreinfo');
+        $user = Auth::user();
+        return view ('users.moreinfo', compact('user'));
     }
 
     public function postUpdate (Request $request) {

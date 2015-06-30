@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->enum ('sex', array ('male', 'female'))->nullable();
             $table->integer ('age')->nullable();
-            $table->timestamp('birthday')->nullable();
+            $table->date('birthday')->nullable();
             $table->string ('place')->nullable();
             $table->rememberToken()->nullable();
             $table->timestamps();

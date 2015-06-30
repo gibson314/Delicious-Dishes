@@ -22,23 +22,32 @@
         <fieldset>
             <div class="form-group">
                 {!! Form::label('sex', '性别：') !!}
+                @if ($user->sex == 'male')
                 {!! Form::radio('sex', 'male', true)!!} 男
                 {!! Form::radio('sex', 'female')!!} 女
+                @elseif($user->sex == 'female')
+                    {!! Form::radio('sex', 'male')!!} 男
+                    {!! Form::radio('sex', 'female', true)!!} 女
+                    @else
+                    {!! Form::radio('sex', 'male', true)!!} 男
+                    {!! Form::radio('sex', 'female')!!} 女
+                @endif
+
             </div>
 
             <div class="form-group">
                 {!! Form::label('age', '年龄:') !!}
-                {!! Form::text('age', null, ['class' => 'form-control']) !!}
+                {!! Form::text('age', $user->age , ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('birthday', '出生日期:') !!}
-                {!! Form::text('birthday', null, ['class' => 'form-control']) !!}
+                {!! Form::text('birthday', $user->birthday, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('place', '长期居住地:') !!}
-                {!! Form::text('place', null, ['class' => 'form-control']) !!}
+                {!! Form::text('place', $user->place, ['class' => 'form-control']) !!}
             </div>
 
             {!! Form::submit('提交',array('class'=>'btn btn-large btn-success btn-block')) !!}

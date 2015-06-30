@@ -14,8 +14,8 @@ class HomeController extends Controller
         return view ('home.index');
     }
     public function about () {
-        $message = DB::table ('users')->get;
-        return view ('home.about', compact('message'));
+
+        return view ('home.about');
     }
 }
 
