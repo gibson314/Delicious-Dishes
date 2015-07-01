@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Dish;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
 class DishesController extends Controller
 {
     /**
@@ -20,6 +22,14 @@ class DishesController extends Controller
         return view ('dishes.create');
     }
 
+
+    public function index(){
+        //方法二
+        $dishes = Dish::orderBy('publish_date','desc')->paginate(10);
+        //$dishes = Dish::orderBy('name', 'desc')->get();
+
+        return view('dishes.index')->with('dishes', $dishes);
+    }
 
     public function store (Request $request) {
         //validate the content
@@ -59,8 +69,15 @@ class DishesController extends Controller
 
     public function show ($id) {
         $dish = Dish::find($id);
-
-        return view ('dishes.show', compact ('dish'));
+        $dishfoods=DB::table('dishes')
+            ->join('food_dish', 'id', '=', 'food_dish.dish_id')
+            ->select('food_dish.food_name', 'food_dish.volume')
+            ->get();
+        $utensils=DB::table('dishes')
+            ->join('dish_utensil', 'id', '=', 'dish_utensil.dish_id')
+            ->select('dish_utensil.utensil_name')
+            ->get();
+        return view ('dishes.show', compact ('dish','dishfoods','utensils'));
     }
 
 

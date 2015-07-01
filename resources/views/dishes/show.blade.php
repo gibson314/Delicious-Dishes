@@ -21,12 +21,23 @@
                 <td>简介</td>
                 <td> {{$dish->intro}}</td>
             </tr>
-
+            <tr>
+                <td>食材</td>
+                <td>     @foreach($dishfoods as $dishfood)
+                        <a href="{{ url('/foods',$dishfood->food_name) }}">{{$dishfood->food_name}}{{$dishfood->volume}}</a><br/>
+                    @endforeach</td>
+            </tr>
+            <tr>
+                <td>工具</td>
+                <td>     @foreach($utensils as $utensil)
+                        {{$utensil->utensil_name}}<br/>
+                    @endforeach</td>
+            </tr>
             </tbody>
         </table>
     </div>
 
-    <h2>主题图片</h2>
+        <h2>主题图片</h2>
     <img src={{$dish->TitleImg}} alt='Dish Picture' />
 
 @endsection

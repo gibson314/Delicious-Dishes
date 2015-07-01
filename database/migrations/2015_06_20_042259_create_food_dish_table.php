@@ -14,9 +14,9 @@ class CreateFoodDishTable extends Migration
     {
         //创建菜谱与食材的多对多 枢纽表
         Schema::create('food_dish', function (Blueprint $table) {
-            $table -> string('food_name');
             $table -> integer('dish_id');
-            $table -> primary(['food_name', 'dish_id']); //composite key
+            $table -> string('food_name');
+            $table -> primary(['dish_id', 'food_name']); //composite key
             $table -> string('volume');
         });
     }

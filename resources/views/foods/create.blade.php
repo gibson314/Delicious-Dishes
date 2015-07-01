@@ -8,9 +8,9 @@
 
     <div class="container">
         <fieldset>
-            {!! Form::open(['url' => 'foods/store']) !!}
+            {!! Form::open(['url' => 'foods']) !!}
             <div class="form-group">
-                {!! Form::label('name', '名称：') !!}
+                {!! Form::label('name', '名称:') !!}
                 {!! Form::text('name', null, ['class' => 'form-control']) !!}
 
             </div>
