@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Dish;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Comment;
 class DishesController extends Controller
 {
     /**
@@ -68,6 +69,18 @@ class DishesController extends Controller
         $dish = Dish::find($id);
 
         return view ('dishes.edit', compact ('dish'));
+    }
+
+
+
+    public function addcomment (Request $request, $id) {
+        $comment = new Comment;
+        $user = Auth::user();
+        $comment -> content = $request['content'];
+        $comment -> dish_id = $id;
+        $comment -> author = $user->username;
+        $comment -> save();
+        return redirect ('/users/dishes');
     }
 
 }

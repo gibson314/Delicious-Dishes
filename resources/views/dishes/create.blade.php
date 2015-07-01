@@ -11,7 +11,7 @@
             {!! Form::open(['url' => '/dishes']) !!}
             <div class="form-group">
                 {!! Form::label('name', '名称：') !!}
-                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                {!! Form::text('name', null, ['class' => 'form-control', 'type'=>'hidden']) !!}
 
             </div>
 
@@ -26,15 +26,6 @@
 
 
             </div>
-
-            {{--add step--}}
-
-
-
-
-
-
-
 
             <div class="form-group">
                 {!! Form::label('tip', '小贴士:') !!}

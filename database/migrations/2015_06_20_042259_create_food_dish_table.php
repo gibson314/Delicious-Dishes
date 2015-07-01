@@ -18,6 +18,8 @@ class CreateFoodDishTable extends Migration
             $table -> integer('dish_id');
             $table -> primary(['food_name', 'dish_id']); //composite key
             $table -> string('volume');
+
+
         });
     }
 

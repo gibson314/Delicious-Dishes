@@ -20,4 +20,8 @@ class Dish extends Model
     public function foods () {
         return $this -> belongsToMany('App\Food', 'food_dish', 'dish_id', 'food_id');
     }
+
+    public function comments () {
+        return $this -> hasMany('App\Comment', 'id', 'id');
+    }
 }
