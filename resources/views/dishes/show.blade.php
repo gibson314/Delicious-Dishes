@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <td>作者</td>
-                <td>{{$dish->author}}</td>
+                <td><a href="{{ url('/author',$dish->authorid) }}">{{$author->username}}</a></td>
             </tr>
             <tr>
                 <td>简介</td>
@@ -26,7 +26,7 @@
             <tr>
                 <td>食材</td>
                 <td>     @foreach($dishfoods as $dishfood)
-                        <a href="{{ url('/foods',$dishfood->food_name) }}">{{$dishfood->food_name}}{{$dishfood->volume}}</a><br/>
+                        <a href="{{ url('/foods',$dishfood->food_name) }}">{{$dishfood->food_name}}({{$dishfood->volume}})</a><br/>
                     @endforeach</td>
             </tr>
             <tr>
@@ -37,10 +37,15 @@
             </tr>
             <tr>
                 <td>步骤</td>
-                <td>     @foreach($steps as $step)
-                        <img src="{{$step->step_img}}"/><br/>
-                        {{$step->description}}<br/>
+                <td>
+                    <ol>
+
+                        @foreach($steps as $step)
+                            <li/>{{$step->description}}<br/>
+                            <a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>
                     @endforeach</td>
+                    </ol>
+
             </tr>
             </tbody>
         </table>

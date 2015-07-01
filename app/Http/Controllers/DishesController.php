@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -69,6 +70,7 @@ class DishesController extends Controller
 
     public function show ($id) {
         $dish = Dish::find($id);
+        $author=User::where('id',$dish->authorid)->first();
         $dishfoods=DB::table('dishes')
             ->join('food_dish', 'dishes.id', '=', 'food_dish.dish_id')
             ->where('dishes.id', '=', $id)
@@ -84,7 +86,7 @@ class DishesController extends Controller
             ->where('dishes.id', '=', $id)
             ->select('dish_step.step_img','dish_step.description')
             ->get();
-        return view ('dishes.show', compact ('dish','dishfoods','utensils','steps'));
+        return view ('dishes.show', compact ('dish','dishfoods','utensils','steps','author'));
     }
 
 
