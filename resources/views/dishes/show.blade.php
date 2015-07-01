@@ -1,54 +1,24 @@
 
 @extends('layouts.master')
 @section('content')
-    <h2>主题图片</h2>
-    <img src={{$dish->TitleImg}} alt='Dish Picture' />
-    <h1>菜谱信息</h1>
 
     {!! link_to_route('dishes.edit', '编辑', $dish->id) !!}
-
-    <table width="200" border="1">
-        <tr>
-            <td colspan="3">&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="3">&nbsp;</td>
-        </tr>
-        <tr>
-            <td rowspan="2">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="3">&nbsp;</td>
-        </tr>
-    </table>
 
     <div class="container">
         <table class="table">
             <tbody>
 
             <tr>
-                <td>名称</td>
-                <td> {{$dish->name}}</td>
+                <td colspan="2"><h1>{{$dish->name}}</h1></td>
             </tr>
             <tr>
-                <td>作者</td>
-                <td><a href="{{ url('/author',$dish->authorid) }}">{{$author->username}}</a></td>
+                <td colspan="2"><a href="{{ url('/author',$dish->authorid) }}">{{$author->username}}</a>上传于{{$dish->publish_date}}</td>
             </tr>
             <tr>
-                <td>简介</td>
-                <td> {{$dish->intro}}</td>
+            <td colspan="2" align="center" ><img src={{$dish->TitleImg}} alt='Dish Picture' height="300"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"> {{$dish->intro}}</td>
             </tr>
             <tr>
                 <td>食材</td>
