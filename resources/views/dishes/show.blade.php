@@ -2,7 +2,9 @@
 @extends('layouts.master')
 @section('content')
     <h1>菜谱信息</h1>
-    <a href="{{url('/dishes/edit', $dish->id)}}">编辑</a>
+
+    {!! link_to_route('dishes.edit', '编辑', $dish->id) !!}
+
     <div class="container">
         <table class="table">
             <tbody>

@@ -26,16 +26,22 @@ Route :: controller ('users', 'UsersController');
 
 
 //菜谱群组
-Route::group(['prefix' => 'dishes'
-//    , 'middleware' => 'authority'
-], function() {
-    Route :: get ('create', 'DishesController@create');
-    Route :: get ('/', 'DishesController@index');
-    Route :: get ('{id}', 'DishesController@show');
-    Route :: post ('store', 'DishesController@store');
-    Route :: post ('update', 'DishesController@update');
-    Route :: get ('edit/{id}', 'DishesController@edit');
-});
+//Route::group(['prefix' => 'dishes'
+////    , 'middleware' => 'authority'
+//], function() {
+//    Route :: get ('create', 'DishesController@create');
+//    Route :: get ('/', 'DishesController@index');
+//    Route :: get ('{id}', 'DishesController@show');
+//    Route :: post ('store', 'DishesController@store');
+//    Route :: post ('update', 'DishesController@update');
+//    Route :: get ('edit/{id}', 'DishesController@edit');
+//});
+
+
+//
+Route :: resource ('dishes', 'DishesController');
+//Route :: get ('dishes/hello', 'DishesController@hello');
+
 
 //Route :: get ('/dishes/create', 'DishesController@create');
 //Route :: get ('/dishes', 'DishesController@index');

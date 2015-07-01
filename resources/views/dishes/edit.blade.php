@@ -8,7 +8,7 @@
 
     <div class="container">
         <fieldset>
-            {!! Form::open(['action' => ['DishesController@update', $dish->id]] ) !!}
+            {!! Form::open(['action' => ['DishesController@update', $dish->id], 'method' => 'PUT'] ) !!}
 
             <div class="form-group">
                 {!! Form::label('name', '名称：') !!}
