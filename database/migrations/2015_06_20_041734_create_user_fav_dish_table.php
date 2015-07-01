@@ -21,11 +21,15 @@ class CreateUserFavDishTable extends Migration
 
             $table->foreign('user_id')//生成foreign key
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
             $table->foreign('dish_id')
                 ->references ('id')
-                ->on ('dishes');
+                ->on ('dishes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

@@ -22,11 +22,15 @@ class CreateFoodDishTable extends Migration
 
             $table->foreign('food_name')
                 ->references ('name')
-                ->on ('foods');
+                ->on ('foods')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
             $table->foreign('dish_id')
                 ->references ('id')
-                ->on ('dishes');
+                ->on ('dishes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
         });
     }

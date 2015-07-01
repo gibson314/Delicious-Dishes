@@ -26,7 +26,9 @@ class CreateDishStepTable extends Migration
 
             $table->foreign('dish_id')
                 ->references ('id')
-                ->on ('dishes');
+                ->on ('dishes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
         });
     }

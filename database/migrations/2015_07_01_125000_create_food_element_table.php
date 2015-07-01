@@ -21,7 +21,9 @@ class CreateFoodElementTable extends Migration
 
             $table->foreign('food')
                 ->references ('name')
-                ->on ('foods');
+                ->on ('foods')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

@@ -31,7 +31,10 @@ class CreateDishesTable extends Migration
 
             $table->foreign('authorid')//生成外键，删除用户时删除所有dish
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
         });
     }
 
