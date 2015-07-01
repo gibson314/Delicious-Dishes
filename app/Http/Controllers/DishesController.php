@@ -39,16 +39,32 @@ class DishesController extends Controller
         //validate the content
         $user = Auth::user();
         $dish = new Dish;
+
         $dish -> name = $request['name'];
         $dish -> intro = $request['intro'];
         $dish -> tag = $request['tag'];
         $dish -> tip = $request['tip'];
         $dish -> TitleImg = $request ['TitleImg'];
-        $dish -> author = $user -> username;
+        $dish -> authorid = $user -> id;
         $dish -> publish_date = Carbon::now();
-
         $dish -> save ();
 
+
+
+        $count = $request['step_count'];
+
+
+        //step_count: 步骤数     content1: 第一个步骤    photo1: 第一个图片
+        for ( $tmp=1; $tmp <= $count; $tmp++ ) {
+
+
+            $content = $request['content'.$tmp];
+            $photo = $request['photo'.$tmp];
+            DB::table('dish_step')->insert(['dish_id' => $dish->id, 'step_id' => $tmp, 'description' => $content, 'step_img' => $photo]);
+        }
+        //$dish -> save ();
+
+//        return view ('home.about', compact ('dish'));
         return redirect ('/users/dishes');
     }
 
@@ -89,7 +105,14 @@ class DishesController extends Controller
             ->where('dishes.id', '=', $id)
             ->select('dish_step.step_img','dish_step.description')
             ->get();
-        return view ('dishes.show', compact ('dish','dishfoods','utensils','steps','author'));
+        $comments=DB::table('dishes')
+            ->join('comments', 'dishes.id', '=', 'comments.dish_id')
+            ->where('dishes.id', '=', $id)
+            ->get();
+
+
+
+        return view ('dishes.show', compact ('dish','dishfoods','utensils','steps','author','comments'));
     }
 
 
@@ -107,7 +130,7 @@ class DishesController extends Controller
 
         $comment -> content = $request['content'];
         $comment -> dish_id = $request['dish_id'];
-        $comment -> author = $user->username;
+        $comment -> author_id = $user->id;
         $comment -> save();
         return redirect (url('dishes',$comment->dish_id));
     }

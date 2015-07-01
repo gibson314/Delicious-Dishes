@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
 
 
             $table -> integer ('dish_id');
-            $table -> string ('author');
+            $table -> integer ('author_id');
             $table -> text ('content');
             $table->timestamps();
 

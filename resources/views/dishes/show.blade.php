@@ -39,11 +39,10 @@
                 <td>步骤</td>
                 <td>
                     <ol>
-
                         @foreach($steps as $step)
                             <li/>{{$step->description}}<br/>
                             <a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>
-                    @endforeach</td>
+                        @endforeach</td>
                     </ol>
 
             </tr>
@@ -57,7 +56,16 @@
 
 @section('comments')
     <h2>评论</h2>
-    <form action="{{ URL('dishes/') }}" method="POST">
+    <ol>
+    @foreach($comments as $comment)
+            <?php $cauthor=\App\User::where('id',$comment->author_id)->first();?>
+        <li/>{{$cauthor->username}} {{$comment->content}}<br/>
+        {{--<a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>--}}
+    @endforeach
+    </ol>
+
+
+    <form action="{{ URL('dishes/comments') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="dish_id" value="{{$dish->id}}">
         <textarea name="content" rows="10" class="form-control" required="required"></textarea>
