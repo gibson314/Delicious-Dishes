@@ -16,7 +16,7 @@ class CreateFoodDishTable extends Migration
         Schema::create('food_dish', function (Blueprint $table) {
             $table -> string('food_name');
             $table -> integer('dish_id');
-            $table -> primary(['food_name', 'dish_id']); //composite key
+            $table -> primary(['dish_id', 'food_name']); //composite key
             $table -> string('volume');
 
 

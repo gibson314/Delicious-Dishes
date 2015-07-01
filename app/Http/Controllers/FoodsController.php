@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Dish;
+use App\Food;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 class FoodsController extends Controller
@@ -45,9 +45,9 @@ class FoodsController extends Controller
         $food -> detail = $request['detail'];
         $food -> img = $request['img'];
 
-        $food -> save ();
+        $food -> save();
 
-        return redirect ('/index');
+        return redirect('/dishes/create');
     }
 
     /**
@@ -57,9 +57,9 @@ class FoodsController extends Controller
      * @return Response
      */
     public function show($name) {
-        $dish = Dish::find($name);
+        $food = Food::where('name',$name)->first();
 
-        return view ('dishes.show', compact ('dish'));
+        return view ('foods.show', compact ('food'));
     }
 
     /**
