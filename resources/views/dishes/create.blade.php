@@ -27,6 +27,15 @@
 
             </div>
 
+            {{--add step--}}
+
+
+
+
+
+
+
+
             <div class="form-group">
                 {!! Form::label('tip', '小贴士:') !!}
                 {!! Form::text('tip', null, ['class'=>'form-control']) !!}
