@@ -57,7 +57,7 @@
 
 @section('comments')
     <h2>评论</h2>
-    <form action="{{ URL('admin/pages') }}" method="POST">
+    <form action="{{ URL('dishes/') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="dish_id" value="{{$dish->id}}">
         <textarea name="content" rows="10" class="form-control" required="required"></textarea>
