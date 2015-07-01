@@ -18,7 +18,7 @@ class CreateDishStepTable extends Migration
             $table -> integer ('dish_id');
             $table -> integer ('step_id');
             $table -> text ('description');
-            $table -> string ('photo') -> nullable();
+            $table -> string ('step_img') -> nullable();
 
 
             $table -> primary(['dish_id', 'step_id']);

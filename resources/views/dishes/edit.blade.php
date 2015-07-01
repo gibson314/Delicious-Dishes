@@ -11,8 +11,8 @@
             {!! Form::open(['action' => ['DishesController@update', $dish->id], 'method' => 'PUT'] ) !!}
 
             <div class="form-group">
-                {!! Form::label('name', '名称：') !!}
-                {!! Form::text('name', $dish->id, ['class' => 'form-control']) !!}
+                {!! Form::label('name', '名称:') !!}
+                {!! Form::text('name', $dish->name, ['class' => 'form-control']) !!}
 
             </div>
 

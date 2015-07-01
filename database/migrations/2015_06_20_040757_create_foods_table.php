@@ -18,6 +18,7 @@ class CreateFoodsTable extends Migration
             $table -> string ('name');
             $table -> text ('intro');
             $table -> text('detail');
+            $table -> string ('img');
             $table -> primary('name');  //主键
         });
     }

@@ -31,9 +31,7 @@ class CreateDishesTable extends Migration
 //            $table->foreign('upload_user_name')//生成外键，删除用户时删除所有文章
 //                ->reference('username')
 //                ->on('users')
-//                ->onDelete('cascade');
-            
-            $table->timestamps();
+//                ->onDelete('cascade');]
 
         });
     }

@@ -8,6 +8,7 @@ class Dish extends Model
 {
     //
     protected $table = 'dishes';
+    public $timestamps=false;
 
     public function user() {
         return $this->belongsTo('App\User');
