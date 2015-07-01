@@ -13,6 +13,7 @@ class CreateDishesTable extends Migration
     public function up()
     {
         Schema::create('dishes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table -> string('name');
             $table->date('publish_date');
@@ -23,14 +24,17 @@ class CreateDishesTable extends Migration
             $table->string('TitleImg');
 
 
-            $table-> integer ('authorid');          //从属的用户
+            $table-> integer ('authorid')->unsigned();          //从属的用户
             //$table -> integer ('favourite_user_id');
             //$table -> integer ('comment_user_id');
 
 
-//            $table->foreign('authorid')//生成外键，删除用户时删除所有dish
-//                ->references('id')
-//                ->on('users');
+            $table->foreign('authorid')//生成外键，删除用户时删除所有dish
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
         });
     }
 

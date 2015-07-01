@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Food;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
 class FoodsController extends Controller
 {
     /**
@@ -18,7 +20,11 @@ class FoodsController extends Controller
      */
     public function index()
     {
-        //
+        $foods = Food::orderBy('name','asc')->paginate(10);
+        $foods->setPath('foods');
+        //$dishes = Dish::orderBy('name', 'desc')->get();
+
+        return view('foods.index')->with('foods', $foods);
     }
 
     /**
@@ -58,8 +64,17 @@ class FoodsController extends Controller
      */
     public function show($name) {
         $food = Food::where('name',$name)->first();
-
-        return view ('foods.show', compact ('food'));
+        $dishes=DB::table('foods')
+            ->join('food_dish', 'foods.name', '=', 'food_dish.food_name')
+            ->join('dishes', 'food_dish.dish_id', '=', 'dishes.id')
+            ->where('foods.name', '=', $name)
+            ->get();
+        $elements=DB::table('foods')
+            ->join('food_element', 'foods.name', '=', 'food_element.food')
+            ->where('foods.name', '=', $name)
+            ->select('food_element.element','food_element.volume')
+            ->get();
+        return view ('foods.show', compact ('food','dishes','elements'));
     }
 
     /**

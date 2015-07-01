@@ -30,6 +30,7 @@ class DishesController extends Controller
     public function index(){
         //方法二
         $dishes = Dish::orderBy('publish_date','desc')->paginate(10);
+        $dishes->setPath('dishes');
         //$dishes = Dish::orderBy('name', 'desc')->get();
 
         return view('dishes.index')->with('dishes', $dishes);
