@@ -12,9 +12,18 @@
             <div class="form-group">
                 {!! Form::label('name', '菜谱:') !!}
                 {!! Form::text('dishes1', null, ['class' => 'form-control']) !!}
-                {!! Form::text('sishes2', null, ['class' => 'form-control']) !!}
-
+                    {!! Form::radio('op', 'and', true)!!} 与
+                    {!! Form::radio('op', 'or')!!} 或
+                {!! Form::text('dishes2', null, ['class' => 'form-control']) !!}
             </div>
+            <div class="form-group">
+                {!! Form::label('name', '食材:') !!}
+                {!! Form::text('dishes1', null, ['class' => 'form-control']) !!}
+                {!! Form::radio('op', 'and', true)!!} 与
+                {!! Form::radio('op', 'or')!!} 或
+                {!! Form::text('dishes2', null, ['class' => 'form-control']) !!}
+            </div>
+
 
             {!! Form::submit('查菜谱',array('class'=>'btn btn-large btn-success btn-block')) !!}
 

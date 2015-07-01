@@ -15,13 +15,20 @@ class CreateDishStepTable extends Migration
         Schema::create('dish_step', function (Blueprint $table) {
 //            $table->increments('id');
 //            $table->timestamps();
-            $table -> integer ('dish_id');
+            $table->engine = 'InnoDB';
+            $table -> integer ('dish_id')->unsigned();
             $table -> integer ('step_id');
             $table -> text ('description');
             $table -> string ('step_img') -> nullable();
 
 
             $table -> primary(['dish_id', 'step_id']);
+
+            $table->foreign('dish_id')
+                ->references ('id')
+                ->on ('dishes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
         });
     }

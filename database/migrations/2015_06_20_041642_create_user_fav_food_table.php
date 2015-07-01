@@ -13,9 +13,22 @@ class CreateUserFavFoodTable extends Migration
     public function up()
     {
         Schema::create('user_fav_food', function (Blueprint $table) {
-            $table -> integer ('user_id');
+            $table->engine = 'InnoDB';
+            $table -> integer ('user_id')->unsigned();
             $table -> string ('food_name');
             $table -> primary (['user_id', 'food_name']);
+
+            $table->foreign('user_id')//生成foreign key
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
+            $table->foreign('food_name')
+                ->references ('name')
+                ->on ('foods')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
