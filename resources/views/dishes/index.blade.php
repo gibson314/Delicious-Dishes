@@ -8,5 +8,5 @@
             <p><a href="{{ url('author',$dish->authorid) }}">{{$author->username}}</a> 发表于{{$dish->publish_date}}<br></p>
             <p>{{$dish->intro}}<br></p>
         @endforeach
-        {{$dishes->render()}}
+        <?php echo($dishes->render())?>
 @endsection

@@ -19,10 +19,25 @@
                 <td>{{$food->intro}}</td>
             </tr>
             <tr>
+                <td>营养成分</td>
+                <td>
+                    @foreach($elements as $element)
+                       {{$element->element}} {{$element->volume}}<br>
+                    @endforeach</td>
+            </tr>
+            <tr>
                 <td>营养价值</td>
                 <td> {{$food->detail}}</td>
             </tr>
-
+            <tr>
+                <td>菜谱</td>
+                <td>
+                    @foreach($dishes as $dish)
+                        <h2><a href="{{ url('/dishes',$dish->id) }}"><img src="{{$dish->TitleImg}}"/></a></h2>
+                        <h2><a href="{{ url('/dishes',$dish->id) }}">{{$dish->name}}</a><br></h2>
+                        {{$dish->intro}}
+                @endforeach</td>
+            </tr>
             </tbody>
         </table>
     </div>
