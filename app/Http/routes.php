@@ -37,7 +37,7 @@ Route :: controller ('users', 'UsersController');
 //    Route :: get ('edit/{id}', 'DishesController@edit');
 //});
 
-
+Route::post ('dishes/comments', 'DishesController@addcomment');
 //
 Route :: resource ('dishes', 'DishesController');
 Route :: resource ('foods', 'FoodsController');
@@ -51,4 +51,3 @@ Route :: resource ('foods', 'FoodsController');
 //Route :: post ('/dishes/store', 'DishesController@store');
 //Route::get ('/dishes/edit/{id}', );
 
-//Route::post ('dishes/comments/{id}', 'DishesController@addcomment');
