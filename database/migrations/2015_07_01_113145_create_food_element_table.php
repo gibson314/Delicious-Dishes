@@ -17,6 +17,7 @@ class CreateFoodElementTable extends Migration
             $table -> string ('element');
             $table -> string ('volume');
             $table -> primary(['food', 'element']);
+
         });
     }
 
