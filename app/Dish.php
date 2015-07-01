@@ -21,4 +21,8 @@ class Dish extends Model
 //        return $this -> belongsToMany('App\Food', 'food_dish', 'dish_id', 'food_name');
         return $this -> belongsToMany('App\Food', 'food_dish', 'dish_id', 'food_name');
     }
+
+    public function comments () {
+        return $this -> hasMany('App\Comment', 'id', 'id');
+    }
 }

@@ -52,4 +52,16 @@
     </div>
 
 
+
+
+
+@section('comments')
+    <h2>评论</h2>
+    <form action="{{ URL('admin/pages') }}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="dish_id" value="{{$dish->id}}">
+        <textarea name="content" rows="10" class="form-control" required="required"></textarea>
+        <br>
+        <button class="btn btn-lg btn-info">提交评论</button>
+    </form>
 @endsection
