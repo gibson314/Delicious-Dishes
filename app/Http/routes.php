@@ -39,6 +39,8 @@ Route :: controller ('users', 'UsersController');
 
 Route::post ('dishes/comments', 'DishesController@addcomment');
 //
+Route :: get ('dishes/', 'DishesController@index');
+Route :: resource ('author', 'AuthorController');
 Route :: resource ('dishes', 'DishesController');
 Route :: resource ('foods', 'FoodsController');
 

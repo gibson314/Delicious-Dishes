@@ -26,11 +26,6 @@ class CreateDishesTable extends Migration
             $table-> integer ('authorid');          //从属的用户
             //$table -> integer ('favourite_user_id');
             //$table -> integer ('comment_user_id');
-
-
-            $table->foreign('author')//生成外键，删除用户时删除所有dish
-                ->references('username')
-                ->on('users');
         });
     }
 
