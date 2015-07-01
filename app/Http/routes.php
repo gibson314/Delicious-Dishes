@@ -40,6 +40,7 @@ Route :: controller ('users', 'UsersController');
 
 //
 Route :: resource ('dishes', 'DishesController');
+Route :: resource ('foods', 'FoodsController');
 //Route :: get ('dishes/hello', 'DishesController@hello');
 
 
