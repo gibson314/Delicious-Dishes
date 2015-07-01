@@ -11,6 +11,9 @@ use App\Dish;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Comment;
+
+
 
 class DishesController extends Controller
 {
@@ -94,6 +97,19 @@ class DishesController extends Controller
         $dish = Dish::find($id);
 
         return view ('dishes.edit', compact ('dish'));
+    }
+
+
+    public function addcomment (Request $request){
+        $comment = new Comment;
+
+        $user = Auth::user();
+
+        $comment -> content = $request['content'];
+        $comment -> dish_id = $request['dish_id'];
+        $comment -> author = $user->username;
+        $comment -> save();
+        return redirect (url('dishes',$comment->dish_id));
     }
 
 }

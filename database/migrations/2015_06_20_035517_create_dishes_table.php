@@ -28,9 +28,9 @@ class CreateDishesTable extends Migration
             //$table -> integer ('comment_user_id');
 
 
-            $table->foreign('author')//生成外键，删除用户时删除所有dish
-                ->references('username')
-                ->on('users');
+//            $table->foreign('authorid')//生成外键，删除用户时删除所有dish
+//                ->references('id')
+//                ->on('users');
         });
     }
 
