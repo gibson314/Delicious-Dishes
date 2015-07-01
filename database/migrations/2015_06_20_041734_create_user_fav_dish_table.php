@@ -14,9 +14,18 @@ class CreateUserFavDishTable extends Migration
     {
         //用户收藏菜谱 枢纽表
         Schema::create('user_fav_dish', function (Blueprint $table) {
-            $table -> integer ('user_id');
-            $table -> integer ('dish_id');
+            $table->engine = 'InnoDB';
+            $table -> integer ('user_id')->unsigned();
+            $table -> integer ('dish_id')->unsigned();
             $table -> primary (['user_id', 'dish_id']);
+
+            $table->foreign('user_id')//生成foreign key
+                ->references('id')
+                ->on('users');
+
+            $table->foreign('dish_id')
+                ->references ('id')
+                ->on ('dishes');
         });
     }
 

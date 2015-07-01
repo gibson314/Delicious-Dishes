@@ -15,9 +15,14 @@ class CreateDishUtensilTable extends Migration
         Schema::create('dish_utensil', function (Blueprint $table) {
 //            $table->increments('id');
 //            $table->timestamps();
-            $table -> integer ('dish_id');
+            $table->engine = 'InnoDB';
+            $table -> integer ('dish_id')->unsigned();
             $table -> string ('utensil_name');
             $table -> primary(['utensil_name', 'dish_id']);
+
+            $table->foreign('dish_id')
+                ->references ('id')
+                ->on ('dishes');
         });
     }
 

@@ -14,11 +14,19 @@ class CreateFoodDishTable extends Migration
     {
         //创建菜谱与食材的多对多 枢纽表
         Schema::create('food_dish', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table -> string('food_name');
-            $table -> integer('dish_id');
+            $table -> integer('dish_id')->unsigned();
             $table -> primary(['dish_id', 'food_name']); //composite key
             $table -> string('volume');
 
+            $table->foreign('food_name')
+                ->references ('name')
+                ->on ('foods');
+
+            $table->foreign('dish_id')
+                ->references ('id')
+                ->on ('dishes');
 
         });
     }

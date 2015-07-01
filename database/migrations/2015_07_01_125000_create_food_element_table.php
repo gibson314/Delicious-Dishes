@@ -13,11 +13,15 @@ class CreateFoodElementTable extends Migration
     public function up()
     {
         Schema::create('food_element', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table -> string ('food');
             $table -> string ('element');
             $table -> string ('volume');
             $table -> primary(['food', 'element']);
 
+            $table->foreign('food')
+                ->references ('name')
+                ->on ('foods');
         });
     }
 
