@@ -23,7 +23,7 @@ class CreateDishesTable extends Migration
             $table->string('TitleImg');
 
 
-            $table-> string ('author');          //从属的用户
+            $table-> integer ('authorid');          //从属的用户
             //$table -> integer ('favourite_user_id');
             //$table -> integer ('comment_user_id');
 

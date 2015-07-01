@@ -1,6 +1,8 @@
 
 @extends('layouts.master')
 @section('content')
+    <h2>主题图片</h2>
+    <img src={{$dish->TitleImg}} alt='Dish Picture' />
     <h1>菜谱信息</h1>
 
     {!! link_to_route('dishes.edit', '编辑', $dish->id) !!}
@@ -33,11 +35,16 @@
                         {{$utensil->utensil_name}}<br/>
                     @endforeach</td>
             </tr>
+            <tr>
+                <td>步骤</td>
+                <td>     @foreach($steps as $step)
+                        <img src="{{$step->step_img}}"/><br/>
+                        {{$step->description}}<br/>
+                    @endforeach</td>
+            </tr>
             </tbody>
         </table>
     </div>
 
-        <h2>主题图片</h2>
-    <img src={{$dish->TitleImg}} alt='Dish Picture' />
 
 @endsection

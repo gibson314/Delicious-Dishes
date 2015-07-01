@@ -70,14 +70,21 @@ class DishesController extends Controller
     public function show ($id) {
         $dish = Dish::find($id);
         $dishfoods=DB::table('dishes')
-            ->join('food_dish', 'id', '=', 'food_dish.dish_id')
+            ->join('food_dish', 'dishes.id', '=', 'food_dish.dish_id')
+            ->where('dishes.id', '=', $id)
             ->select('food_dish.food_name', 'food_dish.volume')
             ->get();
         $utensils=DB::table('dishes')
-            ->join('dish_utensil', 'id', '=', 'dish_utensil.dish_id')
+            ->join('dish_utensil', 'dishes.id', '=', 'dish_utensil.dish_id')
+            ->where('dishes.id', '=', $id)
             ->select('dish_utensil.utensil_name')
             ->get();
-        return view ('dishes.show', compact ('dish','dishfoods','utensils'));
+        $steps=DB::table('dishes')
+            ->join('dish_step', 'dishes.id', '=', 'dish_step.dish_id')
+            ->where('dishes.id', '=', $id)
+            ->select('dish_step.step_img','dish_step.description')
+            ->get();
+        return view ('dishes.show', compact ('dish','dishfoods','utensils','steps'));
     }
 
 

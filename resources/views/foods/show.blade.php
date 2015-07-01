@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('content')
+    <h2>主题图片</h2>
+    <img src={{$food->img}} alt='Food Picture' />
     <h1>食材信息</h1>
 
     {!! link_to_route('foods.edit', '编辑', $food->name) !!}
@@ -25,7 +27,5 @@
         </table>
     </div>
 
-    <h2>主题图片</h2>
-    <img src={{$food->img}} alt='Food Picture' />
 
 @endsection
