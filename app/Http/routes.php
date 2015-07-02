@@ -19,7 +19,7 @@
 //主页
 Route :: get ('/', 'HomeController@index');
 //about us
-Route :: get ('/about', ['middleware' => 'login','HomeController@about']);
+Route :: get ('/about', 'HomeController@about');
 
 //用户注册与登录
 Route :: controller ('users', 'UsersController');
