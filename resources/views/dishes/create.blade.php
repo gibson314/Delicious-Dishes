@@ -2,7 +2,7 @@
 
 <script   language="javascript">
     var count= 0 ;
-    var maxfile = 10;
+    var maxfile = 20;
     //增加元素
     function addUpload() {
         if(count >= maxfile)    return;//限制最多maxfile个文件框

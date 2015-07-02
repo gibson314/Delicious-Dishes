@@ -63,15 +63,15 @@ class FoodsController extends Controller
      */
     public function store(Request $request) {
         //validate the content
-        $user = Auth::user();
-        $food = new Food;
-        $food -> name = $request['name'];
-        $food -> intro = $request['intro'];
-        $food -> detail = $request['detail'];
-        $food -> img = $request['img'];
-
-        $food -> save();
-
+        DB::table('foods')->insert(
+            ['name' => $request['name'], 'intro' => $request['intro'],'detail'=>$request['detail'],'img'=>$request['img']]
+        );
+        $count = $request['step_count'];
+        for ( $tmp=1; $tmp <= $count; $tmp++ ) {
+            $element = $request['element'.$tmp];
+            $volume = $request['volume'.$tmp];
+            DB::table('food_element')->insert(['food' => $request['name'], 'element' => $element, 'volume' => $volume]);
+        }
         return redirect('/dishes/create');
     }
 
@@ -98,8 +98,13 @@ class FoodsController extends Controller
 
     public function edit ($name) {
         $food = Food::where('name',$name)->first();
-
-        return view ('foods.edit', compact ('food'));
+        $elements=DB::table('food_element')
+            ->where('food', '=', $name)
+            ->get();
+        $ele_count=DB::table('food_element')
+            ->where('food', '=', $name)
+            ->count();
+        return view ('foods.edit', compact ('food','elements','ele_count'));
     }
 
     public function remove ($name) {
@@ -111,7 +116,6 @@ class FoodsController extends Controller
     **购物车模块
     /======================================*/
     public function addtocart (Request $request) {
-
         $food = Food::where('name',$request['food_name'])->first();
 //        echo($food->name);
         $qty=$request['count'];
@@ -140,6 +144,15 @@ class FoodsController extends Controller
         //$total=$carts->total;
         Cart::destroy();//清空购物车
         return view ('foods/success',compact ('total'));
+    }
+
+    public function update ($name, Request $request) {
+        //validate the content
+        DB::table('foods')
+            ->where('name', $name)
+            ->update(['intro'=>$request['intro'],'detail'=>$request['detail'],'img'=>$request['img'],'inventory'=>$request['inventory'],'price'=>$request['price']]);
+
+        return redirect ('foods');
     }
 
     public function clear() {
