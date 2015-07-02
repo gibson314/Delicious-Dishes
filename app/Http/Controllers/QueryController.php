@@ -24,8 +24,6 @@ class QueryController extends Controller
 
 
 
-
-
     public function query()
 {
     return view ('query.query');

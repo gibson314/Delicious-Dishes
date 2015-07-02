@@ -56,6 +56,7 @@ class UsersController extends Controller
         $user->username = $request['username'];
         $user->email = $request['email'];
         $user->password = Hash::make($request['password']);
+        $user->privilege = 1;
         $user->save();
         //$message = "注册成功，请重新登录";
         //登录获取session
@@ -63,6 +64,7 @@ class UsersController extends Controller
             'username'=>$request['username'],
             'password'=>$request['password']
         ]);
+
         return redirect ('users/profile');
 
     }
@@ -119,10 +121,16 @@ class UsersController extends Controller
         $user -> age = $request['age'];
         $user -> birthday = $request['birthday'];
         $user -> place = $request ['place'];
+        $user -> privilege = 2;//Elite User, could update the dishes
         $user -> save();
         return redirect ('/users/profile');
     }
 
+    public function remove ($id) {
+        DB::table('users')->where('id', '=', $id)->delete();
+
+        return redirect ('admin/users');
+    }
     public function getLogout () {
         if (Auth::check()) {
             Auth::logout();

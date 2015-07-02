@@ -29,7 +29,10 @@ class FoodsController extends Controller
 //        $this->middleware('login', ['only' => ['create', 'barAction']]);
 
         $this->middleware('login', ['except' => ['index', 'show']]);
+        $this -> middleware ('eliteuser',['except' => ['index', 'show', '']]);
     }
+
+
 
 
 
@@ -99,6 +102,11 @@ class FoodsController extends Controller
         return view ('foods.edit', compact ('food'));
     }
 
+    public function remove ($name) {
+        Food::where('name',$name)->delete();
+
+        return redirect ('/admin/foods');
+    }
     /*======================================
     **购物车模块
     /======================================*/

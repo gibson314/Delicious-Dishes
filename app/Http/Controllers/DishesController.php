@@ -135,6 +135,11 @@ class DishesController extends Controller
         return view ('dishes.edit', compact ('dish'));
     }
 
+    public function destroy ($id) {
+        DB::table('dishes')->where('id', '=', $id)->delete();
+
+        return redirect ('admin/dishes');
+    }
 
     public function addcomment (Request $request){
         $comment = new Comment;

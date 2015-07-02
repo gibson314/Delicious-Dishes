@@ -62,7 +62,25 @@ Route :: post ('foods/addtocart', 'FoodsController@addtocart');
 Route :: get ('foods/showcart', 'FoodsController@showcart');
 Route :: get ('foods/check', 'FoodsController@check');
 Route :: get ('foods/clear', 'FoodsController@clear');
+Route :: get ('foods/remove', 'FoodsController@remove');
 Route :: resource ('foods', 'FoodsController');
+
+
+
+
+//=============================admin=========================
+Route::group(['prefix' => 'admin', 'middleware' => ['login', 'subadmin']], function()
+{
+    Route::get('/', 'AdminController@index');
+    Route::get('/users', 'AdminController@users');
+    Route::get('/foods', 'AdminController@foods');
+    Route::get('/dishes', 'AdminController@dishes');
+
+});
+
+
+
+
 
 //Route :: get ('dishes/hello', 'DishesController@hello');
 
