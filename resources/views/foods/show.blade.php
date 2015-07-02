@@ -58,7 +58,7 @@
                                 {{--收藏食物 结束--}}
                             </dt>
                             <dd>
-                                <div id="txt">
+                                <div>
                                     {{$food->intro}}
                                 </div>
                             </dd>
@@ -122,30 +122,32 @@
                 </div>
                 <table class="table" contenteditable="false" valign="center">
                     <tbody>
-                    <tr>
-                        <th scope="row" width="10%">
-                            <h4>名称</h4>
-                        </th>
-                        <td valign="middle" scope="row" width="15%">
-                            {{$food->name}}
-                        </td>
-                        <td width="5%"></td>
-                        <td colspan="1" rowspan="2">
-                            <h4>简介</h4>
-                            <hr>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$food->intro}}
-                        </td>
-                    </tr>
+                    {{--<tr>--}}
+                        {{--<th scope="row" width="10%">--}}
+                            {{--<h4>名称</h4>--}}
+                        {{--</th>--}}
+                        {{--<td valign="middle" scope="row" width="15%">--}}
+                            {{--{{$food->name}}--}}
+                        {{--</td>--}}
+                        {{--<td width="5%"></td>--}}
+                        {{--<td colspan="1" rowspan="2">--}}
+                            {{--<h4>简介</h4>--}}
+                            {{--<hr>--}}
+                            {{--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$food->intro}}--}}
+                        {{--</td>--}}
+                    {{--</tr>--}}
 
                     <tr>
-
-                        <th scope="row">
+                        <td>
+                        {{--<th scope="row">--}}
                             <h4>营养成分</h4>
-                        </th>
-                        <td scope="row">
+                        {{--</th>--}}
+                        <hr>
+                        {{--<td scope="row">--}}
                             @foreach($elements as $element)
                                 {{$element->element}} {{$element->volume}}<br>
                             @endforeach
+                        {{--</td>--}}
                         </td>
                     </tr>
                     <tr>
@@ -170,7 +172,9 @@
                 </table>
             </div>
             <div class="span3">
-
+                {{--<nav class="navbar navbar-default navbar-fixed-right" role="navigation">--}}
+                {{--<div class="navbar navbar navbar-fixed-right">--}}
+                    {{--<div class="navbar-inner">--}}
                 <h1>购物车</h1>
                 <?php $carts = Cart::content(); $total = Cart::total(); ?>
                 <table valign="middle">
@@ -195,11 +199,15 @@
                     </table>
 
 
+
                     <hr>
                 @endforeach
                 总价：{{$total}}
                 <br><br>
                 <button class="btn btn-middle" type="submit"><a href="{{url('foods/showcart')}}">结算</a></button>
+                    {{--</div>--}}
+                {{--</div>--}}
+                    {{--</nav>--}}
 
 
             </div>
