@@ -166,6 +166,23 @@
                 </table>
             </div>
             <div class="span3">
+<<<<<<< HEAD
+=======
+                <h1>购物车</h1>
+                <?php $carts = Cart::content(); $total = Cart::total(); ?>
+                @foreach($carts as $cart)
+
+                    {{$cart->name}} & {{$cart->qty}} &  {{$cart->price}} & {{$cart->subtotal}}
+
+
+                    <br>
+                @endforeach
+                总价：{{$total}}
+
+                <a href="{{url('foods')}}">继续购物</a>
+                <a href="{{url('foods/showcart')}}">结账</a>
+                <a href="{{url('foods/clear')}}">清空购物车</a>
+>>>>>>> origin/master
 
             </div>
         </div>
