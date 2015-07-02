@@ -80,7 +80,7 @@
                 </table>
                 <p>
                     <h4>小贴士：</h4>
-                    {{$dish->tips}}
+                    {{$dish->tip}}
                 </p>
             </div>
             <div class="span4">

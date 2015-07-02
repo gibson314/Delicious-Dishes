@@ -136,14 +136,16 @@ class FoodsController extends Controller
     public function check () {
         $carts = Cart::content();
         $total = Cart::total();
+        DB::beginTransaction();
         foreach ($carts as $cart) {
   //          $food = Food::where('name', $cart->name)->first();
   //          $food->inventory -= $cart->qty;
-            DB::table('foods')
-                ->where('name', $cart->name)
-                ->decrement('inventory',$cart->qty);
-    //另一种写法            ->update(['inventory' => $food->inventory]);
+                DB::table('foods')
+                    ->where('name', $cart->name)
+                    ->decrement('inventory', $cart->qty);
+                //另一种写法            ->update(['inventory' => $food->inventory]);
         }
+        DB::commit();
         //$total=$carts->total;
         Cart::destroy();//清空购物车
         return view ('foods/success',compact ('total'));

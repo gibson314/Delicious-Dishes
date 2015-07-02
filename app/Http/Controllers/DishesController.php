@@ -62,18 +62,23 @@ class DishesController extends Controller
         $dish -> publish_date = Carbon::now();
         $dish -> save ();
 
-
-
         $count = $request['step_count'];
-
-
         //step_count: 步骤数     content1: 第一个步骤    photo1: 第一个图片
         for ( $tmp=1; $tmp <= $count; $tmp++ ) {
-
-
             $content = $request['content'.$tmp];
             $photo = $request['photo'.$tmp];
             DB::table('dish_step')->insert(['dish_id' => $dish->id, 'step_id' => $tmp, 'description' => $content, 'step_img' => $photo]);
+        }
+        $count2 = $request['food_count'];
+        for ( $tmp=1; $tmp <= $count2; $tmp++ ) {
+            $food = $request['food'.$tmp];
+            $volume = $request['volume'.$tmp];
+            DB::table('food_dish')->insert(['dish_id' => $dish->id, 'food_name' => $food, 'volume' => $volume]);
+        }
+        $count3 = $request['utensil_count'];
+        for ( $tmp=1; $tmp <= $count3; $tmp++ ) {
+            $utensil = $request['utensil'.$tmp];
+            DB::table('dish_utensil')->insert(['dish_id' => $dish->id, 'utensil_name' => $utensil]);
         }
         //$dish -> save ();
 
