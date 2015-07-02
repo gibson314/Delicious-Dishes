@@ -1,6 +1,7 @@
-@extends ('layouts.master')
+@extends ('layouts.dishmaster')
 
 @section('content')
+
     <h1>编辑</h1>
 
     <hr/>

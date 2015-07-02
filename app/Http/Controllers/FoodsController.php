@@ -76,7 +76,7 @@ class FoodsController extends Controller
             ->get();
 
  //      $this->load->view('include/header', $user_info);
- //       return view ('foods.show', compact ('food','dishes','elements'));
+        return view ('foods.show', compact ('food','dishes','elements'));
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.foodmaster')
 
 @section('content')
     <h1>Create a new food</h1>

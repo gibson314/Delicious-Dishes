@@ -1,6 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.usermaster')
 @section('content')
-
     <hr/>
 
 

@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.dishmaster')
 
 <script   language="javascript">
     var count= 0 ;

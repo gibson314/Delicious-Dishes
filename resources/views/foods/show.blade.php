@@ -1,5 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.foodmaster')
 @section('content')
+
     <h2>主题图片</h2>
     <img src={{$food->img}} alt='Food Picture' />
     <h1>食材信息</h1>
@@ -41,6 +42,4 @@
             </tbody>
         </table>
     </div>
-
-
 @endsection

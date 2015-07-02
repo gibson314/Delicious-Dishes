@@ -1,9 +1,10 @@
-@extends ('layouts.master')
+@extends ('layouts.dishmaster')
 
 @section('content')
+
         @foreach ($dishes as $dish)
             <div class="Empty">
-                <h1></h1>
+                <p></br></p>
             </div>
 
             <div class="container-fluid">
@@ -12,7 +13,7 @@
                         <a href="{{ url('/dishes',$dish->id) }}"><img style="vertical-align:middle;" src="{{$dish->TitleImg}}"/></a>
                     </div>
                     <div class="span8">
-                        <table valign="middle"  align="left" class="table table-hover" contenteditable="true">
+                        <table valign="middle"  align="left" class="table table-hover" contenteditable="false">
                             <tbody>
                             <tr>
                                 <th scope="row" width="25%">
@@ -20,7 +21,7 @@
                                         <li>菜品名称</li>
                                     </ul>
                                 </th>
-                                <td colspan="3" rowspan="1"><a href="{{ url('/dishes',$dish->id) }}">{{$dish->name}}</a></td>
+                                <td><a href="{{ url('/dishes',$dish->id) }}">{{$dish->name}}</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">
@@ -29,7 +30,7 @@
                                     </ul>
                                 </th>
                                 <?php $author=\App\User::where('id',$dish->authorid)->first();?>
-                                <td colspan="3" rowspan="1"><a href="{{ url('author',$dish->authorid) }}">{{$author->username}}</a> </td>
+                                <td><a href="{{ url('author',$dish->authorid) }}">{{$author->username}}</a> </td>
                             </tr>
                             <tr>
                                 <th scope="row">
@@ -37,7 +38,7 @@
                                         <li>上传时间</li>
                                     </ul>
                                 </th>
-                                <td colspan="3" rowspan="1">发表于{{$dish->publish_date}}<br></td>
+                                <td>发表于{{$dish->publish_date}}<br></td>
                             </tr>
                             <tr>
                                 <th colspan="1" rowspan="2" scope="row">
@@ -45,7 +46,7 @@
                                         <li>菜品简介</li>
                                     </ul>
                                 </th>
-                                <td colspan="3" rowspan="2">{{$dish->intro}}<br></td>
+                                <td>{{$dish->intro}}<br></td>
                             </tr>
                             </tbody>
                         </table>

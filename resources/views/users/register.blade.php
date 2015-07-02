@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.blankmaster')
 @section('content')
 
     <hr/>
