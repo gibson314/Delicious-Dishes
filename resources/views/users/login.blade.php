@@ -6,7 +6,7 @@
 <h1>欢迎登录</h1>
 @if ($message)
     <div class="alert alert-danger">
-        <h4>{{ $message }}</h4>
+        <p>{{ $message }}</p>
     </div>
 @endif
     <!--error detection-->

@@ -15,6 +15,21 @@ class AuthorController extends Controller
      *
      * @return Response
      */
+
+
+    //中间件，阻止无权限用户访问
+    public function __construct()
+    {
+//        $this->middleware('auth');
+
+//        $this->middleware('login', ['only' => ['create', 'barAction']]);
+
+        $this->middleware('login');
+    }
+
+
+
+
     public function index()
     {
         //
