@@ -117,35 +117,38 @@
                     {{$dish->tip}}
                 </p>
             </div>
-            <div class="span4">
-                <ul class="nav nav-list">
-                    <li class="nav-header">
-                        列表标题
-                    </li>
-                    <li class="active">
-                        <a href="#">首页</a>
-                    </li>
-                    <li>
-                        <a href="#">库</a>
-                    </li>
-                    <li>
-                        <a href="#">应用</a>
-                    </li>
-                    <li class="nav-header">
-                        功能列表
-                    </li>
-                    <li>
-                        <a href="#">资料</a>
-                    </li>
-                    <li>
-                        <a href="#">设置</a>
-                    </li>
-                    <li class="divider">
-                    </li>
-                    <li>
-                        <a href="#">帮助</a>
-                    </li>
-                </ul>
+            <div class="span1"></div>
+            <div class="span3">
+
+                <h1>购物车</h1>
+                <?php $carts = Cart::content(); $total = Cart::total(); ?>
+                <table valign="middle">
+                    <tbody>
+                    <tr>
+                        <th width="50px">Name</td>
+                        <th width="30px">Quan</td>
+                        <th width="40px">Price</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                @foreach($carts as $cart)
+                    <table valign="middle" align="middle">
+                        <tbody>
+                        <tr>
+                            <td width="50px">{{$cart->name}}</td>
+                            <td width="30px">{{$cart->qty}}</td>
+                            <td width="40px">{{$cart->subtotal}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <hr>
+                @endforeach
+                总价：{{$total}}
+                <br><br>
+                <button class="btn btn-middle" type="submit"><a href="{{url('foods/showcart')}}">结算</a></button>
             </div>
         </div>
     </div>

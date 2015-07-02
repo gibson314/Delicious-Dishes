@@ -39,8 +39,13 @@
             </div>
             <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
         </div>
+
         {{--<h2><a href="{{ url('/foods',$food->name) }}"><img src="{{$food->img}}"/></a></h2>--}}
         {{--<h2><a href="{{ url('/foods',$food->name) }}">{{$food->name}}</a></h2>--}}
         {{--<p>{{$food->intro}}<br></p>--}}
     @endforeach
+    <div class="container" style="text-align: right">
+        <a href="{{ url('/foods/create') }}">+添加新食材</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{ url('/users/profile') }}">返回个人中心</a>
+    </div>
 @endsection

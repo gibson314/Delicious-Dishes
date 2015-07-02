@@ -54,6 +54,10 @@
             </div>
             <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
         </div>
-    @endforeach
 
+    @endforeach
+    <div class="container" style="text-align: right">
+        <a href="{{ url('/dishes/create') }}">+添加新菜谱</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{ url('/users/profile') }}">返回个人中心</a>
+    </div>
 @endsection

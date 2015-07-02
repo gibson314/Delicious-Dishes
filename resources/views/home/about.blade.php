@@ -50,6 +50,9 @@
     开发者： 刘宇昂、马力天、杨蕊<br><br>
     联系方式：<br><br>
     如有任何问题或者建议请积极联系我们。<br><br>
+    <div class="container" style="text-align: left">
+        <a href="{{ url('../public') }}">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
 
 
 @endsection
