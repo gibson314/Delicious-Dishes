@@ -1,7 +1,7 @@
 @extends ('layouts.querymaster')
 
 @section('content')
-    <h2>查询结果</h2>
+    <h2>查询结果——食材</h2>
     @foreach ($foods as $food)
         <div class="Empty">
             <p><br></p>
@@ -9,7 +9,8 @@
 
         <div class="container-fluid" style="vertical-align: middle">
             <div class="row-fluid">
-                <div class="span4">
+                <div class="span1"></div>
+                <div class="span3">
                     <a href="{{ url('/foods',$food->name) }}"><img src="{{$food->img}}"/></a>
                 </div>
                 <div class="span8">

@@ -1,14 +1,14 @@
 @extends ('layouts.foodmaster')
 
 @section('content')
+    <h1>食材列表</h1>
+    <hr>
     @foreach ($foods as $food)
-        <div class="Empty">
-            <p></br></p>
-        </div>
-
+        <br>
         <div class="container-fluid">
             <div class="row-fluid">
-                <div class="span4">
+                <div class="span1"></div>
+                <div class="span3">
                     <a href="{{ url('/foods',$food->name) }}"><img src="{{$food->img}}"/></a>
                 </div>
                 <div class="span8">
