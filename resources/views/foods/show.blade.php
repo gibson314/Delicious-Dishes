@@ -97,7 +97,7 @@
                                     </a>
                                 </div>
                                 <div class="span5" id="count">
-                                    <input class="text_box" name="goodnum" type="text" value=1 />
+                                    <input class="text_box" name="count" type="text" value=1 />
 
                                 </div>
                                 <div class="span2">
@@ -166,6 +166,21 @@
                 </table>
             </div>
             <div class="span3">
+                <h1>购物车</h1>
+                <?php $carts = Cart::content(); $total = Cart::total(); ?>
+                @foreach($carts as $cart)
+
+                    {{$cart->name}} & {{$cart->qty}} &  {{$cart->price}} & {{$cart->subtotal}}
+
+
+                    <br>
+                @endforeach
+                总价：{{$total}}
+
+                <a href="{{url('foods')}}">继续购物</a>
+                <a href="{{url('foods/showcart')}}">结账</a>
+                <a href="{{url('foods/clear')}}">清空购物车</a>
+
             </div>
         </div>
     </div>
