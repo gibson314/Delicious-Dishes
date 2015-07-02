@@ -89,7 +89,11 @@
                     <div class="span6">
                         <div class="row-fluid">
                         {{--购物车模块--}}
+<<<<<<< HEAD
+                        <form action="{{ URL('foods/addtocart') }}" method="post">
+=======
                         <form action="{{ URL('foods/addtocart') }}" method="POST">
+>>>>>>> origin/master
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row-fluid">
                                 <div class="span1" >
