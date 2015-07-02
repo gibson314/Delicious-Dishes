@@ -126,6 +126,7 @@ class DishesController extends Controller
         $comments=DB::table('dishes')
             ->join('comments', 'dishes.id', '=', 'comments.dish_id')
             ->where('dishes.id', '=', $id)
+            ->orderBy('comments.id','desc')
             ->get();
 
 
