@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class QueryController extends Controller
 {
@@ -50,6 +51,43 @@ class QueryController extends Controller
     public function hquery()
     {
         return view ('query.hquery');
+    }
+
+    public function result(Request $request)
+    {
+        if($request['op1']=='and')
+        {
+            $dishes1=DB::table('dishes')
+            ->where('name','like','%'.$request['dishes1'].'%')
+            ->where('name','like','%'.$request['dishes2'].'%')
+            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+            ->get();
+        }
+        else if($request['op1']=='or')
+        {
+            $dishes1=DB::table('dishes')
+                ->where('name','like','%'.$request['dishes1'].'%')
+                ->orWhere('name','like','%'.$request['dishes2'].'%')
+                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+                ->get();
+        }
+        else
+        {
+            $dishes1=DB::table('dishes')
+                ->where('name','like','%'.$request['dishes1'].'%')
+                ->where('name','notlike','%'.$request['dishes2'].'%')
+                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+                ->get();
+        }
+//        $dishes=DB::table('dishes')
+//            ->join('users','dishes.authorid','=','users.id')
+//            ->where('name','like','%'.$request['dishes1'].'%')
+//            ->orWhere('name','like','%'.$request['dishes2'].'%')
+//            ->orderBy('publish_date','desc')
+//            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+//            ->get();
+        $dishes=$dishes1;
+        return view('query.dresult')->with('dishes', $dishes);
     }
 
     /**

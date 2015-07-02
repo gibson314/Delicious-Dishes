@@ -52,11 +52,12 @@
 
 
 @section('comments')
+    <a name="comments"></a>
     <h2>评论</h2>
     <ol>
     @foreach($comments as $comment)
             <?php $cauthor=\App\User::where('id',$comment->author_id)->first();?>
-        <li/>{{$cauthor->username}} {{$comment->content}}<br/>
+        <li/><a href="{{ url('author',$comment->author_id) }}">{{$cauthor->username}}</a>: <p/>{{$comment->content}}<br/>
         {{--<a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>--}}
     @endforeach
     </ol>

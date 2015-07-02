@@ -133,7 +133,7 @@ class DishesController extends Controller
         $comment -> dish_id = $request['dish_id'];
         $comment -> author_id = $user->id;
         $comment -> save();
-        return redirect (url('dishes',$comment->dish_id));
+        return redirect ('dishes/'.$comment->dish_id.'#comments');
     }
 
 }
