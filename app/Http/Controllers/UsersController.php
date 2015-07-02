@@ -214,12 +214,20 @@ class UsersController extends Controller
 
     //============================我收藏的XX=========================
     public function getFavdishes () {
-        $dishes = DB::table ('user_fav_dish') -> where ('user_id','=',Auth::user()->id);
+        $dishes = DB::table ('user_fav_dish')
+            ->join('dishes','user_fav_dish.dish_id','=','dishes.id')
+            -> where ('user_fav_dish.user_id','=',Auth::user()->id)
+            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+            ->get();
         return view ('users.favdishes', compact('dishes'));
     }
 
     public function getFavfoods () {
-        $foods = DB::table ('user_fav_food') -> where ('user_id','=',Auth::user()->id);
+        $foods = DB::table ('user_fav_food')
+            ->join('foods','user_fav_food.food_name','=','foods.name')
+            -> where ('user_fav_food.user_id','=',Auth::user()->id)
+            //->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+            ->get();
         return view ('users.favfoods', compact('foods'));
     }
 }

@@ -97,7 +97,126 @@
     <h1>Create a new dish</h1>
 
     <hr/>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span8">
+                <div class="form-group">
+                    <form action="{{ URL('dishes') }}" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="form-group">
+                            <label for="name">名称:</label>
+                            <input class="form-control" name="name" type="text" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="intro">简介:</label>
+                            <textarea name="intro"  id="txtLy" rows="4" class="form-control" required="required" ></textarea>
+                            {{--<input class="form-control" name="intro" type="text" id="intro">--}}
+                        </div>
+                        <div id = "count">
 
+                        </div>
+                        <div class="form-group">
+                            <label for="tag">标签:</label>
+                            <textarea name="tag"  id="txtLy" rows="2" class="form-control" required="required" ></textarea>
+                        </div>
+
+                        {{--添加、删除食材--}}
+                        <div id = "count2">
+
+                        </div>
+
+
+                        <div>
+                            <table>
+                                <tr>
+                                    <td  id="tdRrmove2"   width="2000">
+                                        <div id="uploadContent2">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="javascript:addUpload2()">添加食材</a>
+                        <a href="javascript:delUpload2()">删除食材</a>
+                        <br/>
+
+                        <br/>
+                        {{--添加删除食材 完成--}}
+
+                        {{--添加、删除用具--}}
+                        <div id = "count3">
+
+                        </div>
+
+
+                        <div>
+                            <table>
+                                <tr>
+                                    <td  id="tdRrmove3"   width="2000">
+                                        <div id="uploadContent3">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="javascript:addUpload3()">添加用具</a>
+                        <a href="javascript:delUpload3()">删除用具</a>
+                        <br/>
+
+                        <br/>
+                        {{--添加删除用具 完成--}}
+
+                        {{--添加、删除步骤--}}
+                        <div id = "count">
+
+                        </div>
+
+
+                        <div>
+                            <table>
+                                <tr>
+                                    <td  id="tdRrmove"   width="2000">
+                                        <div id="uploadContent">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="javascript:addUpload()">添加步骤</a>
+                        <a href="javascript:delUpload()">删除步骤</a>
+                        <br/>
+
+                        <br/>
+                        {{--添加删除步骤 完成--}}
+
+                        <div class="form-group">
+                            <label for="tip">小贴士:</label>
+                            <textarea name="tip"  id="txtLy" rows="3" class="form-control" required="required" ></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="TitleImg">名称:</label>
+                            <input class="form-control" name="TitleImg" type="text" id="TitleImg">
+                        </div>
+
+
+
+                        {{--<div class="form-group">--}}
+                            {{--<label for="detail">营养价值:</label>--}}
+                            {{--<textarea name="detail"  id="txtLy" rows="4" class="form-control" required="required" id="detail"></textarea>--}}
+                            {{--<input class="form-control" name="detail" type="text" id="detail">--}}
+                        {{--</div>--}}
+
+                        <div class="form-group">
+                            <label for="img">图片(URL):</label>
+                            <input class="form-control" name="img" type="text" id="img">
+                        </div>
+                        <input class="btn btn-lg" type="submit" value="提交">
+
+                    </form>
+                </div>
+            </div>
+        </div>
 
     {{--<div class="container">--}}
         {{--<fieldset>--}}
@@ -158,96 +277,7 @@
 
             {{--{!! Form::close() !!}--}}
 
-            <div class="form-group">
-                <form action="{{ URL('dishes') }}" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <label for="name">名称</label>
-                    <input type="text" name="name" class="form-control" required="required" id="name">
-                    <br>
-                    <label for="name">简介</label>
-                    <p>简介<input type="text" name="intro" class="form-control" required="required"></p>
-                    <br>
-                    <p>标签<input type="text" name="tag" class="form-control" required="required"></p>
-                    <br>
-                    <p>小贴士<input type="text" name="tip" class="form-control" required="required"></p>
-                    <br>
-                    <p>图片<input type="text" name="TitleImg" class="form-control" required="required"></p>
-                    <br>
 
-
-                    {{--添加、删除步骤--}}
-                    <div id = "count">
-
-                    </div>
-
-
-                    <div>
-                        <table>
-                            <tr>
-                                <td  id="tdRrmove"   width="2000">
-                                    <div id="uploadContent">
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <a href="javascript:addUpload()">添加步骤</a>
-                    <a href="javascript:delUpload()">删除步骤</a>
-                    <br/>
-
-                    <br/>
-                    {{--添加删除步骤 完成--}}
-
-                    {{--添加、删除食材--}}
-                    <div id = "count2">
-
-                    </div>
-
-
-                    <div>
-                        <table>
-                            <tr>
-                                <td  id="tdRrmove2"   width="2000">
-                                    <div id="uploadContent2">
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <a href="javascript:addUpload2()">添加食材</a>
-                    <a href="javascript:delUpload2()">删除食材</a>
-                    <br/>
-
-                    <br/>
-                    {{--添加删除食材 完成--}}
-
-                    {{--添加、删除用具--}}
-                    <div id = "count3">
-
-                    </div>
-
-
-                    <div>
-                        <table>
-                            <tr>
-                                <td  id="tdRrmove3"   width="2000">
-                                    <div id="uploadContent3">
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <a href="javascript:addUpload3()">添加用具</a>
-                    <a href="javascript:delUpload3()">删除用具</a>
-                    <br/>
-
-                    <br/>
-                    {{--添加删除用具 完成--}}
-                    <button class="btn btn-lg btn-info">提交</button>
-                </form>
-            </div>
-        </fieldset>
-    </div>
 
 
 @endsection

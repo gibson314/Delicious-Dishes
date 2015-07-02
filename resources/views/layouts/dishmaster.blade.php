@@ -79,6 +79,10 @@
             border-right: 0;
             border-radius: 0 3px 3px 0;
         }
+        #txtLy
+        {
+            width:100%; /* 为什么textarea的宽度要宽于bk的宽度，如何让它正好占满bk的宽度？？？ */
+        }
     </style>
     <link href="http://v2.bootcss.com//assets/css/bootstrap-responsive.css" rel="stylesheet">
 

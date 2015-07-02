@@ -97,7 +97,7 @@
                                     </a>
                                 </div>
                                 <div class="span5" id="count">
-                                    <input class="text_box" name="goodnum" type="text" value=1 />
+                                    <input class="text_box" name="count" type="text" value=1 />
 
                                 </div>
                                 <div class="span2">
@@ -166,6 +166,7 @@
                 </table>
             </div>
             <div class="span3">
+
             </div>
         </div>
     </div>
