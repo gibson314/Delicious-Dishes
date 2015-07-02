@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 @extends('layouts.foodmaster')
-=======
-@extends('layouts.master')
+
+
 <script>
     var count = 1;
     function addCount() {
@@ -14,7 +14,7 @@
         document.getElementById('count').innerHTML = "<input type=text name=count size=2 value="+count+">";
     }
 </script>
->>>>>>> origin/master
+
 @section('content')
 
     <h2>主题图片</h2>
@@ -35,22 +35,7 @@
     <p>单价：{{$food->price}}元</p>
 
 
-    {{--购物车模块--}}
-<form action="{{ URL('foods/addtocart') }}" method="POST">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="container">
-        <a href="javascript:addCount()"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
-        <div id="count">
-            <input type=text name=count value=1 size="2">
-        </div>
-        <a href="javascript:delCount()"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
-    </div>
 
-    <input type="hidden" name="food_name" value={{$food->name}}>
-
-
-    <button class="btn btn-sm btn-info">添加到购物车</button>
-</form>
 
 
     <div class="container">
@@ -88,4 +73,25 @@
             </tbody>
         </table>
     </div>
+    {{--购物车模块--}}
+    <form action="{{ URL('foods/addtocart') }}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="container">
+            <a href="javascript:addCount()">
+            添加</span>
+            </a>
+
+            <div id="count">
+                <input type=text name=count value=1 size="2">
+            </div>
+            <a href="javascript:delCount()">
+                减少
+            </a>
+        </div>
+
+        <input type="hidden" name="food_name" value={{$food->name}}>
+
+
+        <button class="btn btn-sm btn-info">添加到购物车</button>
+    </form>
 @endsection

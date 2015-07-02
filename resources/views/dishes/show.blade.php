@@ -1,29 +1,7 @@
 
-@extends('layouts.master')
+@extends('layouts.dishmaster')
 @section('content')
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="navbar navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <h3 style="color:grey">Delicious Dishes</h3>
-                </div>
-                <div class="container">
-                    <ul class="nav">
-                        @yield('header')
-                        <li><a href="{{ url('../public') }}">主页</a></li>
-                        <li><a href="{{ url('dishes') }}">菜谱</a></li>
-                        <li class="active"><a href="{{ url('foods') }}">食材</a></li>
-                        <li><a href="{{ url('about') }}">关于我们</a></li>
-                        <li><a href="home/contact">联系我们</a></li>
-                        <li><a href="user">个人中心</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div top="100px",width="500px">
-        <p> </br></br></br></br></br></br></p>
-    </div>
+
 
     {!! link_to_route('dishes.edit', '编辑', $dish->id) !!}
 
@@ -72,21 +50,36 @@
 @endsection
 
 @section('comments')
+    <a name="comments"></a>
     <h2>评论</h2>
     <ol>
-    @foreach($comments as $comment)
+        @foreach($comments as $comment)
             <?php $cauthor=\App\User::where('id',$comment->author_id)->first();?>
-        <li/>{{$cauthor->username}} {{$comment->content}}<br/>
-        {{--<a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>--}}
-    @endforeach
+                <li/><a href="{{ url('author',$comment->author_id) }}">{{$cauthor->username}}</a>: <p/>{{$comment->content}}<br/>
+            {{--<a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>--}}
+        @endforeach
     </ol>
-
-
+@if (Auth::guest())
+    <p>请先<a href="{{url('users/login')}}">登录</a>，来发表你的评论，或为你喜爱的食物评分</p>
+    <form action="{{ URL('dishes/comments') }}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" disabled>
+        <input type="hidden" name="dish_id" value="{{$dish->id}}" disabled>
+        <textarea name="content" rows="10" class="form-control" required="required" disabled></textarea>
+        <br>
+        <button class="btn btn-lg btn-info" disabled>提交评论</button>
+    </form>
+@else
     <form action="{{ URL('dishes/comments') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="dish_id" value="{{$dish->id}}">
+        <input type="radio" name="rate" value=1>不满意
+        <input type="radio" name="rate" value=2>还行
+        <input type="radio" name="rate" value=3>一般
+        <input type="radio" name="rate" value=4>满意
+        <input type="radio" name="rate" value=5>很满意
         <textarea name="content" rows="10" class="form-control" required="required"></textarea>
         <br>
         <button class="btn btn-lg btn-info">提交评论</button>
     </form>
+    @endif
 @endsection

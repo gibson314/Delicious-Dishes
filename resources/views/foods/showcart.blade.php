@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.foodmaster')
 
 @section('content')
 <h1>购物车</h1>

@@ -15,10 +15,7 @@ class HomeController extends Controller
     }
     public function about () {
 
-        Cart::add('192ao12', 'Product 1', 1, 9.99);
-        Cart::add('1239ad0', 'Product 2', 2, 5.95, array('size' => 'large'));
-        $cart = Cart::content();
-        return view ('home.about', compact('cart'));
+        return view ('home.about');
     }
 }
 

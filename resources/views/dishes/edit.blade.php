@@ -56,13 +56,6 @@
             </div>
 
 
-            @foreach($elements as $element)
-                <script>addCount();</script>
-                {!! Form::label('element', '步骤:') !!}
-                {!! Form::text('element',$element->element, ['class' => 'form-control']) !!}
-                {!! Form::label('volume', '图片:') !!}
-                {!! Form::text('volume',$element->volume, ['class' => 'form-control']) !!}
-            @endforeach
 
             {{--添加、删除步骤--}}
             <div id = "count">
