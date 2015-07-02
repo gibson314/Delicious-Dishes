@@ -24,7 +24,7 @@ class AuthorController extends Controller
 
 //        $this->middleware('login', ['only' => ['create', 'barAction']]);
 
-        $this->middleware('login');
+        $this->middleware('admin', ['except' => ['show']]);
     }
 
 

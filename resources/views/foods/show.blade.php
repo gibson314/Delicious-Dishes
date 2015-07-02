@@ -18,6 +18,30 @@
 
 @section('content')
     {!! link_to_route('foods.edit', '编辑', $food->name) !!}
+    {{--收藏食物--}}
+    @if(\Illuminate\Support\Facades\DB::table('user_fav_food')
+    ->where('user_id',Auth::user()->id)
+    ->where('food_name', $food->name)->first()
+    )
+        <form action="{{ URL('users/unfav2') }}" method="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="food_name" value="{{$food->name}}">
+            <button class="btn btn-lg btn-info">取消收藏</button>
+            @else
+
+
+                <form action="{{ URL('users/fav2') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="food_name" value="{{$food->name}}">
+                    <button class="btn btn-lg btn-info">收藏</button>
+                    {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
+
+                </form>
+            @endif
+
+
+        </form>
+        {{--收藏食物 结束--}}
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span9">

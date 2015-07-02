@@ -32,6 +32,9 @@ class DishesController extends Controller
 //        $this->middleware('login', ['only' => ['create', 'barAction']]);
 
         $this->middleware('login', ['except' => ['index', 'show']]);
+        $this->middleware('eliteuser', ['except' => [
+            'index', 'show', 'create', 'store'
+        ]]);
     }
 
     public function create () {
