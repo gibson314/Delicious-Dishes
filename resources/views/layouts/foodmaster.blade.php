@@ -112,7 +112,7 @@
                     <li class="active"><a href="{{ url('foods') }}">食材</a></li>
                     <li><a href="{{ url('about') }}">搜索</a></li>
                     <li><a href="home/contact">关于我们</a></li>
-                    
+
                     <li><a href="user">个人中心</a></li>
                 </ul>
             </div>

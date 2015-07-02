@@ -31,7 +31,7 @@
     <br>
     <br>
 
-    <p>库存：{{$food->inventory}}个</p>
+    <p>库存：{{$food->inventory}}{{$food->unit}}</p>
     <p>单价：{{$food->price}}元</p>
 
 

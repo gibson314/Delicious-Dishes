@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.usermaster')
 @section('content')
 
     @foreach($users as $user)
