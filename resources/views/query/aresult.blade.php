@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.querymaster')
 
 @section('content')
     <h2>查询结果</h2>

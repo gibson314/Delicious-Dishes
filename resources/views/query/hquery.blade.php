@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.hquerymaster')
 
 @section('content')
     <h1>Query!!!!</h1>

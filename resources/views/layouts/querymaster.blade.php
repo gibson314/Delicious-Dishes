@@ -109,8 +109,8 @@
                     @yield('header')
                     <li><a href="{{ url('../public') }}">主页</a></li>
                     <li><a href="{{ url('dishes') }}">菜谱</a></li>
-                    <li class="active"><a href="{{ url('foods') }}">食材</a></li>
-                    <li><a href="{{ url('query') }}">搜索</a></li>
+                    <li><a href="{{ url('foods') }}">食材</a></li>
+                    <li class="active"><a href="{{ url('query') }}">搜索</a></li>
                     <li><a href="{{ url('about') }}">关于我们</a></li>
                     @if (!Auth::check())
                         <li class="dropdown">
