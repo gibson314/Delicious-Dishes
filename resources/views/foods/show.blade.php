@@ -31,8 +31,10 @@
                             <dt><h3>{{$food->name}}
                             </h3>
                             {{--收藏食物--}}
-                            @if(\Illuminate\Support\Facades\DB::table('user_fav_food')
-                            ->where('user_id',Auth::user()->id)
+                            {{--@if (!Auth::guest())--}}
+                            @if (Auth::guest())
+                            @elseif(\Illuminate\Support\Facades\DB::table('user_fav_food')
+                            ->where('user_id',Auth::user()->id )
                             ->where('food_name', $food->name)->first()
                             )
                                 <form action="{{ URL('users/unfav2') }}" method="POST">
@@ -46,11 +48,11 @@
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="food_name" value="{{$food->name}}">
                                             <button class="btn btn-middle btn-info">收藏</button>
-                                            {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
+                                            <button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>
 
                                         </form>
                                     @endif
-
+                            {{--@endif--}}
 
                                 </form>
                                 {{--收藏食物 结束--}}
@@ -89,11 +91,9 @@
                     <div class="span6">
                         <div class="row-fluid">
                         {{--购物车模块--}}
-<<<<<<< HEAD
-                        <form action="{{ URL('foods/addtocart') }}" method="post">
-=======
+
                         <form action="{{ URL('foods/addtocart') }}" method="POST">
->>>>>>> origin/master
+
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row-fluid">
                                 <div class="span1" >

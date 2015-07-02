@@ -14,7 +14,9 @@
 
 
                 {{--收藏菜谱--}}
-                @if(\Illuminate\Support\Facades\DB::table('user_fav_dish')
+                @if (Auth::guest())
+
+                @elseif(\Illuminate\Support\Facades\DB::table('user_fav_dish')
                 ->where('user_id',Auth::user()->id)
                 ->where('dish_id', $dish->id)->first()
                 )
