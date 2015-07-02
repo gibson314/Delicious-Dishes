@@ -62,7 +62,7 @@
                     </div>
                     <div class="span6">
                         {{--购物车模块--}}
-                        <form action="{{ URL('foods/addtocart') }}" method="">
+                        <form action="{{ URL('foods/addtocart') }}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row-fluid">
                                 <div class="span1" >
