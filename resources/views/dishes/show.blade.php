@@ -101,7 +101,7 @@
         {{--<a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>--}}
     @endforeach
     </ol>
-
+<hr/>
 @if (Auth::guest())
     <p>请先<a href="{{url('users/login')}}">登录</a>，来发表你的评论，或为你喜爱的食物评分</p>
     <form action="{{ URL('dishes/comments') }}" method="POST">
@@ -115,7 +115,19 @@
     <form action="{{ URL('dishes/comments') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="dish_id" value="{{$dish->id}}">
-        <textarea name="content" rows="10" class="form-control" required="required"></textarea>
+        <p>您觉得这个菜谱怎么样？</p>
+        <lable> 不满意</lable>
+        <input type="radio" id="radio1" name="rate" value="1"/>
+        <lable> 还行</lable>
+        <input type="radio" name="rate" value="2"/>
+        <lable > 一般</lable>
+        <input type="radio" name="rate" value="3"/>
+        <lable > 满意</lable>
+        <input type="radio" name="rate" value="4"/>
+        <lable> 很满意</lable>
+        <input type="radio" name="rate" value="5"/>
+
+        <textarea name="content" rows="5" class="form-control" required="required" placeholder="请留下你的评论"></textarea>
         <br>
         <button class="btn btn-lg btn-info">提交评论</button>
     </form>

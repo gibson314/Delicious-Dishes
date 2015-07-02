@@ -37,17 +37,31 @@ Route :: controller ('users', 'UsersController');
 //    Route :: get ('edit/{id}', 'DishesController@edit');
 //});
 
-Route::post ('dishes/comments', 'DishesController@addcomment');
+
 //
-Route :: get ('dishes/',  'DishesController@index');
+//==========================用户主页=====================
 Route :: resource ('author', 'AuthorController');
+
+
+//==========================查询========================
 Route :: get ('query', 'QueryController@query');
 Route :: get ('hquery', 'QueryController@hquery');
 Route :: post ('query/result', 'QueryController@result');
 Route :: post ('query/dishes', 'QueryController@dishes');
 Route :: post ('query/foods', 'QueryController@foods');
 Route :: post ('query/author', 'QueryController@author');
+
+//=============================Dishes=========================
+Route::post ('dishes/comments', 'DishesController@addcomment');
+Route :: get ('dishes/',  'DishesController@index');
 Route :: resource ('dishes', 'DishesController');
+
+
+//=============================Foods=========================
+Route :: post ('foods/addtocart', 'FoodsController@addtocart');
+Route :: get ('foods/showcart', 'FoodsController@showcart');
+Route :: get ('foods/check', 'FoodsController@check');
+Route :: get ('foods/clear', 'FoodsController@clear');
 Route :: resource ('foods', 'FoodsController');
 
 //Route :: get ('dishes/hello', 'DishesController@hello');

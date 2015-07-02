@@ -10,6 +10,7 @@ use App\Food;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Cart;
 
 class FoodsController extends Controller
 {
@@ -92,36 +93,43 @@ class FoodsController extends Controller
         return view ('foods.show', compact ('food','dishes','elements'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
+    /*======================================
+    **购物车模块
+    /======================================*/
+    public function addtocart (Request $request) {
+
+        $food = Food::where('name',$request['food_name'])->first();
+//        echo($food->name);
+        $qty=$request['count'];
+        $name = $food->name;
+        Cart::add($name, $name, $qty, $food->price);
+        return redirect('foods/showcart');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
+    public function showcart() {
+        $carts = Cart::content();
+        $total = Cart::total();
+        return view ('foods.showcart', compact('carts','total'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function check () {
+        $carts = Cart::content();
+        $total = Cart::total();
+        foreach ($carts as $cart) {
+  //          $food = Food::where('name', $cart->name)->first();
+  //          $food->inventory -= $cart->qty;
+            DB::table('foods')
+                ->where('name', $cart->name)
+                ->decrement('inventory',$cart->qty);
+    //另一种写法            ->update(['inventory' => $food->inventory]);
+        }
+        //$total=$carts->total;
+        Cart::destroy();//清空购物车
+        return redirect ('dishes');//, compact ('total'));
+    }
+
+    public function clear() {
+        Cart::destroy();
+        return redirect ('foods/showcart');
     }
 }

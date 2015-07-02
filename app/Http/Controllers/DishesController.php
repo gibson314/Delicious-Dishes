@@ -144,6 +144,7 @@ class DishesController extends Controller
         $comment -> content = $request['content'];
         $comment -> dish_id = $request['dish_id'];
         $comment -> author_id = $user->id;
+        $comment -> rate = $request['rate'];
         $comment -> save();
         return redirect ('dishes/'.$comment->dish_id.'#comments');
     }

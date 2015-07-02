@@ -43,7 +43,7 @@
 
                 <p>用户名/邮箱<input type="text" name="name_mail" class="form-control" required="required"></p>
                 <br>
-                <p>密码<input type="text" name="password" class="form-control" required="required"></p>
+                <p>密码<input type="password" name="password" class="form-control" required="required"></p>
                 <br>
                 <button class="btn btn-lg btn-info">登录</button>
             </form>

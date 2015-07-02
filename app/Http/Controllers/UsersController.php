@@ -20,9 +20,7 @@ class UsersController extends Controller
 //        $this->middleware('auth');
 
 //        $this->middleware('login', ['only' => ['create', 'barAction']]);
-
-        $this->middleware('login', ['except' => ['getRegister', 'getLogin']]);
-
+        $this->middleware('login', ['except' => ['getRegister', 'getLogin', 'postCreate', 'postSignin']]);
     }
 
 
