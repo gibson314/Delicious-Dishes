@@ -80,26 +80,34 @@ class QueryController extends Controller
 
         if($request['op2']=='and')
         {
-            $dishes1=$dishes1->Where('name','like','%'.$request['dishes2'].'%')
-                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+            $dishes2=$dishes1
+                ->join('food_dish as f1','dishes.id','=','f1.dish_id')
+                ->join('food_dish as f2','dishes.id','=','f2.dish_id')
+                ->where(DB::raw('f1.food_name'),'like','%'.$request['foods1'].'%')
+                ->where(DB::raw('f2.food_name'),'like','%'.$request['foods2'].'%');
+//            $dishes1=$dishes1->Where('name','like','%'.$request['dishes2'].'%')
+//                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
         }
         else if($request['op2']=='or')
         {
-            $dishes4 =DB::select('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
-                                  from food_dish,dishes
-                                  where food_dish.food_name = :id
-                                  and food_dish.dish_id=dishes.id', ['id' =>$request['foods1']]);
-            $dishes3 =DB::select('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date from food_dish,dishes where food_dish.food_name = :id and food_dish.dish_id=dishes.id', ['id' =>$request['foods2']]);
-            $dishes2=DB::statement('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
-                                  from food_dish,dishes
-                                  where food_dish.food_name = :id
-                                  and food_dish.dish_id=dishes.id1
-                                  union
-                                  select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
-                                  from food_dish,dishes
-                                  where food_dish.food_name = :id
-                                  and food_dish.dish_id=dishes.id2
-                                  ', ['id1' =>$request['foods1'],'id2' =>$request['foods2']]);
+            $dishes2=$dishes1
+                ->join('food_dish as table1')
+                ->select(DB::raw('table1.id'))->get();
+//            $dishes4 =DB::select('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
+//                                  from food_dish,dishes
+//                                  where food_dish.food_name = :id
+//                                  and food_dish.dish_id=dishes.id', ['id' =>$request['foods1']]);
+//            $dishes3 =DB::select('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date from food_dish,dishes where food_dish.food_name = :id and food_dish.dish_id=dishes.id', ['id' =>$request['foods2']]);
+//            $dishes2=DB::select('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
+//                                  from food_dish,dishes
+//                                  where food_dish.food_name = :id
+//                                  and food_dish.dish_id=dishes.id1
+//                                  union
+//                                  select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
+//                                  from food_dish,dishes
+//                                  where food_dish.food_name = :id
+//                                  and food_dish.dish_id=dishes.id2
+//                                  ', ['id1' =>$request['foods1'],'id2' =>$request['foods2']]);
 //            $dishes2=DB::table('dishes','food_dish')
 //                ->where('food_name','=',$request['foods1']);
 //            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
@@ -148,7 +156,7 @@ class QueryController extends Controller
 //            ->orderBy('publish_date','desc')
 //            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
 //            ->get();
-        $dishes=$dishes2;
+        $dishes=$dishes2->get();
         return view('query.dresult')->with('dishes', $dishes);
     }
 
