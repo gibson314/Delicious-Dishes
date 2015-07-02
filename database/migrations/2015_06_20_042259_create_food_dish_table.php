@@ -33,6 +33,8 @@ class CreateFoodDishTable extends Migration
                 ->onDelete('cascade');
 
         });
+
+
     }
 
     /**

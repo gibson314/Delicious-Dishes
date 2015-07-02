@@ -74,7 +74,9 @@ class FoodsController extends Controller
             ->where('foods.name', '=', $name)
             ->select('food_element.element','food_element.volume')
             ->get();
-        return view ('foods.show', compact ('food','dishes','elements'));
+
+ //      $this->load->view('include/header', $user_info);
+ //       return view ('foods.show', compact ('food','dishes','elements'));
     }
 
     /**

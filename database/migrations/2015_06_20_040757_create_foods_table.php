@@ -20,7 +20,15 @@ class CreateFoodsTable extends Migration
             $table -> text('detail');
             $table -> string ('img');
             $table -> primary('name');  //主键
+
         });
+
+//        DB::unprepared('
+//        CREATE PROCEDURE food_Create_Default_Task_1(IN food_name VARCHAR(255))
+//        BEGIN
+//            INSERT INTO foods VALUES (food_name,\'Default\',\'Default\',\'Default\');
+//        END'
+//        );
     }
 
     /**
