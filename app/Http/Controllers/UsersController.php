@@ -164,6 +164,72 @@ class UsersController extends Controller
     }
 
 
+
+//===========================dish fav===========================
+    public function postFav (Request $request) {
+        $user = Auth::user();
+        $dishid = $request['dish_id'];
+        DB::table('user_fav_dish')->insert(
+            ['user_id' => $user->id, 'dish_id' => $dishid]
+        );
+        //user->id, dishid  add to table: user_fav_dish
+        return redirect('dishes/'.$dishid);
+    }
+
+    public function postUnfav (Request $request) {
+        $user = Auth::user();
+        $dishid = $request['dish_id'];
+        DB::table('user_fav_dish')->where('user_id', '=', $user->id)
+            ->where('dish_id', '=', $dishid)
+            ->delete();
+        //user->id, dishid  add to table: user_fav_dish
+        return redirect('dishes/'.$dishid);
+    }
+
+
+    //===========================food fav==========================
+    public function postFav2 (Request $request) {
+        $user = Auth::user();
+        $foodname = $request['food_name'];
+        DB::table('user_fav_food')->insert(
+            ['user_id' => $user->id, 'food_name' => $foodname]
+        );
+        //user->id, dishid  add to table: user_fav_dish
+        return redirect('foods/'.$foodname);
+    }
+
+    public function postUnfav2 (Request $request) {
+        $user = Auth::user();
+        $foodname = $request['food_name'];
+        DB::table('user_fav_food')->where('user_id', '=', $user->id)
+            ->where('food_name', '=', $foodname)
+            ->delete();
+        //user->id, dishid  add to table: user_fav_dish
+        return redirect('foods/'.$foodname);
+    }
+    //===========================food fav==========================
+
+
+
+
+    //============================我收藏的XX=========================
+    public function getFavdishes () {
+        $dishes = DB::table ('user_fav_dish')
+            ->join('dishes','user_fav_dish.dish_id','=','dishes.id')
+            -> where ('user_fav_dish.user_id','=',Auth::user()->id)
+            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+            ->get();
+        return view ('users.favdishes', compact('dishes'));
+    }
+
+    public function getFavfoods () {
+        $foods = DB::table ('user_fav_food')
+            ->join('foods','user_fav_food.food_name','=','foods.name')
+            -> where ('user_fav_food.user_id','=',Auth::user()->id)
+            //->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+            ->get();
+        return view ('users.favfoods', compact('foods'));
+    }
 }
 
 

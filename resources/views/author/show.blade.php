@@ -37,15 +37,64 @@
         </div>
     </nav>
     <div top="100px",width="500px">
-        <p> </br></br></br></br></br></br></p>
+        <p> <br><br><br></br></br></br></p>
     </div>
     <h1>{{$author->username}}</h1>
+    <hr>
+    @foreach($dishes as $dish)
 
-                    @foreach($dishes as $dish)
-                        <h2><a href="{{ url('/dishes',$dish->id) }}"><img src="{{$dish->TitleImg}}"/></a></h2>
-                        <h2><a href="{{ url('/dishes',$dish->id) }}">{{$dish->name}}</a><br></h2>
-                        {{$dish->intro}}
-                    @endforeach
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                    <a href="{{ url('/dishes',$dish->id) }}"><img style="vertical-align:middle;" src="{{$dish->TitleImg}}"/></a>
+                </div>
+                <div class="span8">
+                    <table valign="middle"  align="left" class="table table-hover" contenteditable="false">
+                        <tbody>
+                        <tr>
+                            <th scope="row" width="25%">
+                                <ul>
+                                    <li>菜品名称</li>
+                                </ul>
+                            </th>
+                            <td><a href="{{ url('/dishes',$dish->id) }}">{{$dish->name}}</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <ul>
+                                    <li>上传用户</li>
+                                </ul>
+                            </th>
+                            <?php $author=\App\User::where('id',$dish->authorid)->first();?>
+                            <td><a href="{{ url('author',$dish->authorid) }}">{{$author->username}}</a> </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <ul>
+                                    <li>上传时间</li>
+                                </ul>
+                            </th>
+                            <td>发表于{{$dish->publish_date}}<br></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1" rowspan="2" scope="row">
+                                <ul>
+                                    <li>菜品简介</li>
+                                </ul>
+                            </th>
+                            <td>{{$dish->intro}}<br></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
+        </div>
+        {{--<h2><a href="{{ url('/dishes',$dish->id) }}"><img src="{{$dish->TitleImg}}"/></a></h2>--}}
+        {{--<h2><a href="{{ url('/dishes',$dish->id) }}">{{$dish->name}}</a><br></h2>--}}
+        {{--{{$dish->intro}}--}}
+    @endforeach
 
 
 @endsection

@@ -6,17 +6,42 @@
     var count = 1;
     function addCount() {
         count++;
-        document.getElementById('count').innerHTML = "<input type=text name=count value="+count+">";
+//        document.getElementById('count').innerHTML = "<input type=text name=count value="+count+">";
+        document.getElementById('count').innerHTML = "<input class=text_box name=count type=text value="+count+" style=width:50px; />";
     }
     function delCount(){
         if (count > 1)
             count--;
-        document.getElementById('count').innerHTML = "<input type=text name=count value="+count+">";
+        document.getElementById('count').innerHTML = "<input class=text_box name=count type=text value="+count+" style=width:50px; />";
     }
 </script>
 
 @section('content')
     {!! link_to_route('foods.edit', '编辑', $food->name) !!}
+    {{--收藏食物--}}
+    @if(\Illuminate\Support\Facades\DB::table('user_fav_food')
+    ->where('user_id',Auth::user()->id)
+    ->where('food_name', $food->name)->first()
+    )
+        <form action="{{ URL('users/unfav2') }}" method="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="food_name" value="{{$food->name}}">
+            <button class="btn btn-lg btn-info">取消收藏</button>
+            @else
+
+
+                <form action="{{ URL('users/fav2') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="food_name" value="{{$food->name}}">
+                    <button class="btn btn-lg btn-info">收藏</button>
+                    {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
+
+                </form>
+            @endif
+
+
+        </form>
+        {{--收藏食物 结束--}}
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span9">
@@ -61,8 +86,13 @@
                         </table>
                     </div>
                     <div class="span6">
+                        <div class="row-fluid">
                         {{--购物车模块--}}
+<<<<<<< HEAD
                         <form action="{{ URL('foods/addtocart') }}" method="post">
+=======
+                        <form action="{{ URL('foods/addtocart') }}" method="POST">
+>>>>>>> origin/master
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row-fluid">
                                 <div class="span1" >
@@ -70,15 +100,14 @@
                                         +</span>
                                     </a>
                                 </div>
-                                <div class="span5">
-                                    <div class="span5" id="count">
-                                        <input type=text name=count value=1 maxlength=1 />
-                                    </div>
+                                <div class="span5" id="count">
+                                    <input class="text_box" name="count" type="text" value=1 />
+
                                 </div>
-                                <div class="span1">
-                                    <a href="javascript:delCount()">
-                                        -
-                                    </a>
+                                <div class="span2">
+                                <a href="javascript:delCount()">
+                                -
+                                </a>
                                 </div>
                                 <div>
                                     <button class="btn btn-sm btn-info">添加到购物车</button>
@@ -88,6 +117,7 @@
                             <input type="hidden" name="food_name" value={{$food->name}}>
                             {{--<button class="btn btn-sm btn-info">添加到购物车</button>--}}
                         </form>
+                            </div>
                     </div>
                 </div>
                 <table class="table" contenteditable="false" valign="center">
@@ -140,6 +170,24 @@
                 </table>
             </div>
             <div class="span3">
+<<<<<<< HEAD
+=======
+                <h1>购物车</h1>
+                <?php $carts = Cart::content(); $total = Cart::total(); ?>
+                @foreach($carts as $cart)
+
+                    {{$cart->name}} & {{$cart->qty}} &  {{$cart->price}} & {{$cart->subtotal}}
+
+
+                    <br>
+                @endforeach
+                总价：{{$total}}
+
+                <a href="{{url('foods')}}">继续购物</a>
+                <a href="{{url('foods/showcart')}}">结账</a>
+                <a href="{{url('foods/clear')}}">清空购物车</a>
+>>>>>>> origin/master
+
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
-@extends ('layouts.querymaster')
+@extends ('layouts.usermaster')
 
 @section('content')
-    <h2>查询结果——菜谱</h2>
+    <h2>我收藏的菜谱</h2>
     @foreach ($dishes as $dish)
         <div class="Empty">
             <p></br></p>

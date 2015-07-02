@@ -1,11 +1,13 @@
-@extends ('layouts.foodmaster')
+@extends ('layouts.usermaster')
 
 @section('content')
-    <h1>食材列表</h1>
-    <hr>
+    <h2>我喜爱的食材</h2>
     @foreach ($foods as $food)
-        <br>
-        <div class="container-fluid">
+        <div class="Empty">
+            <p><br></p>
+        </div>
+
+        <div class="container-fluid" style="vertical-align: middle">
             <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span3">
@@ -37,20 +39,8 @@
             </div>
             <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
         </div>
-
         {{--<h2><a href="{{ url('/foods',$food->name) }}"><img src="{{$food->img}}"/></a></h2>--}}
         {{--<h2><a href="{{ url('/foods',$food->name) }}">{{$food->name}}</a></h2>--}}
         {{--<p>{{$food->intro}}<br></p>--}}
-
     @endforeach
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span12">
-                <div class="pagination pagination-centered pagination-large">
-                    <?php echo($foods->render())?>
-                </div>
-            </div>
-        </div>
-    </div>
-
 @endsection

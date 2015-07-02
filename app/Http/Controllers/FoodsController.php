@@ -29,7 +29,10 @@ class FoodsController extends Controller
 //        $this->middleware('login', ['only' => ['create', 'barAction']]);
 
         $this->middleware('login', ['except' => ['index', 'show']]);
-        $this -> middleware ('eliteuser',['except' => ['index', 'show', '']]);
+        $this->middleware ('eliteuser',['except' => ['index', 'show', 'create', 'store']]);
+        $this ->middleware ('subadmin', ['only' => [
+            'edit', 'del', 'update'
+        ]]);
     }
 
 
@@ -164,4 +167,7 @@ class FoodsController extends Controller
         Cart::destroy();
         return redirect ('foods/showcart');
     }
+
+
+
 }

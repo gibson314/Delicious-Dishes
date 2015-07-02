@@ -93,6 +93,42 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://v2.bootcss.com//assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="http://v2.bootcss.com//assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="http://v2.bootcss.com//assets/ico/favicon.png">
+    <style>.box {
+            /*非IE的主流浏览器识别的垂直居中的方法*/
+            display: table-cell;
+            vertical-align:middle;
+            /*设置水平居中*/
+            text-align:center;
+            /* 针对IE的Hack */
+            *display: block;
+            *font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/
+            *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+            width:400px;
+            height:200px;
+            border: 0px solid #eee;
+        }
+        .box img {
+            /*设置图片垂直居中*/
+            vertical-align:middle;
+        }</style>
+    <style>.smallbox {
+            /*非IE的主流浏览器识别的垂直居中的方法*/
+            display: table-cell;
+            vertical-align:middle;
+            /*设置水平居中*/
+            text-align:center;
+            /* 针对IE的Hack */
+            *display: block;
+            *font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/
+            *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+            width:100px;
+            height:200px;
+            border: 0px solid #eee;
+        }
+        .smallbox img {
+            /*设置图片垂直居中*/
+            vertical-align:middle;
+        }</style>
 
 </head>
 

@@ -2,6 +2,48 @@
 @extends('layouts.dishmaster')
 @section('content')
     {!! link_to_route('dishes.edit', '编辑', $dish->id) !!}
+
+
+
+
+    {{--收藏菜谱--}}
+@if(\Illuminate\Support\Facades\DB::table('user_fav_dish')
+->where('user_id',Auth::user()->id)
+->where('dish_id', $dish->id)->first()
+)
+    <form action="{{ URL('users/unfav') }}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="dish_id" value="{{$dish->id}}">
+        <button class="btn btn-lg btn-info">取消收藏</button>
+    @else
+
+
+        <form action="{{ URL('users/fav') }}" method="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="dish_id" value="{{$dish->id}}">
+            <button class="btn btn-lg btn-info">收藏</button>
+            {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
+
+        </form>
+@endif
+
+
+    </form>
+    {{--收藏菜谱 结束--}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span8">
@@ -122,13 +164,17 @@
     <br><br><br>
     <h2>评论</h2>
 
-    <ol>
+    <ol reversed="reversed">
         @foreach($comments as $comment)
             <?php $cauthor=\App\User::where('id',$comment->author_id)->first();?>
-                <li/><a href="{{ url('author',$comment->author_id) }}">{{$cauthor->username}}</a>: <p/>{{$comment->content}}<br/>
+
+                <li/><a href="{{ url('author',$comment->author_id) }}">{{$cauthor->username}}</a>:
+                <p>评分：{{$comment->rate}}</p>
+                <p/>评价：{{$comment->content}}<br/>
             {{--<a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>--}}
         @endforeach
     </ol>
+    <hr>
 @if (Auth::guest())
     <p>请先<a href="{{url('users/login')}}">登录</a>，来发表你的评论，或为你喜爱的食物评分</p>
     <form action="{{ URL('dishes/comments') }}" method="POST">
@@ -142,11 +188,11 @@
     <form action="{{ URL('dishes/comments') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="dish_id" value="{{$dish->id}}">
-        <input type="radio" name="rate" value=1>不满意
-        <input type="radio" name="rate" value=2>还行
-        <input type="radio" name="rate" value=3>一般
-        <input type="radio" name="rate" value=4>满意
-        <input type="radio" name="rate" value=5>很满意
+        <input type="radio" name="rate" value=1>&nbsp;&nbsp;不满意&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="rate" value=2>&nbsp;&nbsp;还行&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="rate" value=3>&nbsp;&nbsp;一般&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="rate" value=4>&nbsp;&nbsp;满意&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="rate" value=5>&nbsp;&nbsp;很满意&nbsp;&nbsp;&nbsp;&nbsp;
         <hr>
         <textarea name="content" rows="10" class="form-control" required="required"></textarea>
         <br>

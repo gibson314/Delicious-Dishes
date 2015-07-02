@@ -1,7 +1,8 @@
 @extends ('layouts.dishmaster')
 
 @section('content')
-
+    <h2>菜单列表</h2>
+        <hr>
         @foreach ($dishes as $dish)
             <div class="Empty">
                 <p></br></p>

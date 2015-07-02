@@ -14,6 +14,11 @@
             padding-top: 20px;
             padding-bottom: 60px;
         }
+        #txtLy
+        {
+            width:100%; /* 为什么textarea的宽度要宽于bk的宽度，如何让它正好占满bk的宽度？？？ */
+            height:100px;
+        }
 
         /* Custom container */
         .container {
