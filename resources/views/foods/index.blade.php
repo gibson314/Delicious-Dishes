@@ -25,7 +25,7 @@
                         <tr>
                             <th colspan="1" rowspan="2" scope="row">
                                 <ul>
-                                    <li>菜品简介</li>
+                                    <li>食材简介</li>
                                 </ul>
                             </th>
                             <td>{{$food->intro}}<br></td>

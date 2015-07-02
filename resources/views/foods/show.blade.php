@@ -18,30 +18,7 @@
 
 @section('content')
     {!! link_to_route('foods.edit', '编辑', $food->name) !!}
-    {{--收藏食物--}}
-    @if(\Illuminate\Support\Facades\DB::table('user_fav_food')
-    ->where('user_id',Auth::user()->id)
-    ->where('food_name', $food->name)->first()
-    )
-        <form action="{{ URL('users/unfav2') }}" method="POST">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="food_name" value="{{$food->name}}">
-            <button class="btn btn-lg btn-info">取消收藏</button>
-            @else
 
-
-                <form action="{{ URL('users/fav2') }}" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="hidden" name="food_name" value="{{$food->name}}">
-                    <button class="btn btn-lg btn-info">收藏</button>
-                    {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
-
-                </form>
-            @endif
-
-
-        </form>
-        {{--收藏食物 结束--}}
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span9">
@@ -53,6 +30,30 @@
                         <dl>
                             <dt><h3>{{$food->name}}
                             </h3>
+                            {{--收藏食物--}}
+                            @if(\Illuminate\Support\Facades\DB::table('user_fav_food')
+                            ->where('user_id',Auth::user()->id)
+                            ->where('food_name', $food->name)->first()
+                            )
+                                <form action="{{ URL('users/unfav2') }}" method="POST">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="food_name" value="{{$food->name}}">
+                                    <button class="btn btn-middle btn-success">取消收藏</button>
+                                    @else
+
+
+                                        <form action="{{ URL('users/fav2') }}" method="POST">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="food_name" value="{{$food->name}}">
+                                            <button class="btn btn-middle btn-info">收藏</button>
+                                            {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
+
+                                        </form>
+                                    @endif
+
+
+                                </form>
+                                {{--收藏食物 结束--}}
                             </dt>
                             <dd>
                                 <div id="txt">
@@ -93,12 +94,11 @@
                             <div class="row-fluid">
                                 <div class="span1" >
                                     <a href="javascript:addCount()">
-                                        +</span>
+                                        +
                                     </a>
                                 </div>
                                 <div class="span5" id="count">
                                     <input class="text_box" name="count" type="text" value=1 />
-
                                 </div>
                                 <div class="span2">
                                 <a href="javascript:delCount()">
@@ -166,23 +166,37 @@
                 </table>
             </div>
             <div class="span3">
-<<<<<<< HEAD
-=======
+
                 <h1>购物车</h1>
                 <?php $carts = Cart::content(); $total = Cart::total(); ?>
+                <table valign="middle">
+                    <tbody>
+                    <tr>
+                        <th width="50px">Name</td>
+                        <th width="30px">Quan</td>
+                        <th width="40px">Price</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
                 @foreach($carts as $cart)
+                    <table valign="middle" align="middle">
+                        <tbody>
+                        <tr>
+                            <td width="50px">{{$cart->name}}</td>
+                            <td width="30px">{{$cart->qty}}</td>
+                            <td width="40px">{{$cart->subtotal}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-                    {{$cart->name}} & {{$cart->qty}} &  {{$cart->price}} & {{$cart->subtotal}}
 
-
-                    <br>
+                    <hr>
                 @endforeach
                 总价：{{$total}}
+                <br><br>
+                <button class="btn btn-middle" type="submit"><a href="{{url('foods/showcart')}}">结算</a></button>
 
-                <a href="{{url('foods')}}">继续购物</a>
-                <a href="{{url('foods/showcart')}}">结账</a>
-                <a href="{{url('foods/clear')}}">清空购物车</a>
->>>>>>> origin/master
 
             </div>
         </div>

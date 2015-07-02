@@ -5,52 +5,42 @@
 
 
 
-
-    {{--收藏菜谱--}}
-@if(\Illuminate\Support\Facades\DB::table('user_fav_dish')
-->where('user_id',Auth::user()->id)
-->where('dish_id', $dish->id)->first()
-)
-    <form action="{{ URL('users/unfav') }}" method="POST">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <input type="hidden" name="dish_id" value="{{$dish->id}}">
-        <button class="btn btn-lg btn-info">取消收藏</button>
-    @else
-
-
-        <form action="{{ URL('users/fav') }}" method="POST">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="dish_id" value="{{$dish->id}}">
-            <button class="btn btn-lg btn-info">收藏</button>
-            {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
-
-        </form>
-@endif
-
-
-    </form>
-    {{--收藏菜谱 结束--}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span8">
                 <h1>
                     {{$dish->name}}
                 </h1>
-                <hr>
+
+
+                {{--收藏菜谱--}}
+                @if(\Illuminate\Support\Facades\DB::table('user_fav_dish')
+                ->where('user_id',Auth::user()->id)
+                ->where('dish_id', $dish->id)->first()
+                )
+                    <form action="{{ URL('users/unfav') }}" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="dish_id" value="{{$dish->id}}">
+                        <button class="btn btn-lg btn-success">取消收藏</button>
+                        @else
+
+
+                            <form action="{{ URL('users/fav') }}" method="POST">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="dish_id" value="{{$dish->id}}">
+                                <button class="btn btn-lg btn-info">收藏</button>
+                                {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
+
+                            </form>
+                        @endif
+
+
+                    </form>
+                    {{--收藏菜谱 结束--}}
+
+
+
+                    <hr>
                 <p>
                     <a href="{{ url('/author',$dish->authorid) }}">{{$author->username}}</a><br>
                     上传于{{$dish->publish_date}}

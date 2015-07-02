@@ -59,7 +59,19 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <a href="{{ url('dishes') }}"><img alt="" src="../resources/imagines/home/index-img1.jpg" /></a><br/>
+                            <a href="{{ url('dishes') }}"><img alt="" src="../resources/imagines/home/index-img2.jpg" /></a><br/>
+                            <div class="carousel-caption">
+                                <h4>
+                                    中国饮食
+                                </h4>
+                                <p>
+                                    中国饮食文化是一种广视野、深层次、多角度、高品位的悠久区域文化；是中华各族人民在100多万年的生产和生活实践中，在食源开发、食具研制、食品调理、营养保健和饮食审美等方面创造、积累并影响周边国家和世界的物质财富及精神财富。
+                                    <br>在此，也希望大家能多多支持本站，积极上传菜谱~与食友交流。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="{{ url('dishes') }}"><img alt="" src="../resources/imagines/home/index-img3.jpg" /></a><br/>
                             <div class="carousel-caption">
                                 <h4>
                                     寿司
@@ -67,17 +79,6 @@
                                 <p>
                                     寿司（sushi），平假名写作すし，既可以作为小吃也可以作正餐，配料种类繁多。
                                     寿司是日本传统美食之一，后传入朝鲜、韩国等地，其主要材料是用寿司醋调味过的维持在人体体温的饭块，再加上鱼肉，海鲜，蔬菜或鸡蛋等作配料，其味道鲜美，很受民众的喜爱。
-                                </p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <a href="{{ url('dishes') }}"><img alt="" src="../resources/imagines/home/index-img2.jpg" /></a><br/>
-                            <div class="carousel-caption">
-                                <h4>
-                                    冲浪
-                                </h4>
-                                <p>
-                                    冲浪是以海浪为动力，利用自身的高超技巧和平衡能力，搏击海浪的一项运动。运动员站立在冲浪板上，或利用腹板、跪板、充气的橡皮垫、划艇、皮艇等驾驭海浪的一项水上运动。
                                 </p>
                             </div>
                         </div>

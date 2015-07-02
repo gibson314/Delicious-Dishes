@@ -44,4 +44,12 @@
     <div top="100px",width="500px">
         <p> </br></br></br></br></br></br></p>
     </div>
+    <h1>About Us</h1>
+    <hr>
+    部分数据来源：http://www.meishichina.com/<br><br>
+    开发者： 刘宇昂、马力天、杨蕊<br><br>
+    联系方式：<br><br>
+    如有任何问题或者建议请积极联系我们。<br><br>
+
+
 @endsection

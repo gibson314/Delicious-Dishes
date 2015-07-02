@@ -2,6 +2,7 @@
 
 @section ('content')
     <h1>Login Successfully</h1>
+    <hr>
 
-    <h2><a href="{{ url('/') }}">{{ '返回首页 '}}</a></h2>
+    <button class="btn btn-middle" type="submit"><a href="{{ url('/') }}">{{ '返回首页 '}}</a></button>
 @stop
