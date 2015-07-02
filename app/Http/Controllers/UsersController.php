@@ -208,6 +208,20 @@ class UsersController extends Controller
         return redirect('foods/'.$foodname);
     }
     //===========================food fav==========================
+
+
+
+
+    //============================我收藏的XX=========================
+    public function getFavdishes () {
+        $dishes = DB::table ('user_fav_dish') -> where ('user_id','=',Auth::user()->id);
+        return view ('users.favdishes', compact('dishes'));
+    }
+
+    public function getFavfoods () {
+        $foods = DB::table ('user_fav_food') -> where ('user_id','=',Auth::user()->id);
+        return view ('users.favfoods', compact('foods'));
+    }
 }
 
 
