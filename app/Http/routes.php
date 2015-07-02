@@ -54,6 +54,7 @@ Route :: post ('query/author', 'QueryController@author');
 //=============================Dishes=========================
 Route::post ('dishes/comments', 'DishesController@addcomment');
 Route :: get ('dishes/',  'DishesController@index');
+Route :: post ('dishes/del', 'DishesController@del');
 Route :: resource ('dishes', 'DishesController');
 
 
@@ -62,7 +63,7 @@ Route :: post ('foods/addtocart', 'FoodsController@addtocart');
 Route :: get ('foods/showcart', 'FoodsController@showcart');
 Route :: get ('foods/check', 'FoodsController@check');
 Route :: get ('foods/clear', 'FoodsController@clear');
-Route :: get ('foods/del', 'FoodsController@del');
+Route :: post ('foods/del', 'FoodsController@del');
 Route :: resource ('foods', 'FoodsController');
 
 

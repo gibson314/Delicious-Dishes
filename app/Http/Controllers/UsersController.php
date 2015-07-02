@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
 use Hash;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -126,11 +127,14 @@ class UsersController extends Controller
         return redirect ('/users/profile');
     }
 
-    public function remove ($id) {
-        DB::table('users')->where('id', '=', $id)->delete();
+    public function postDel (Request $request) {
+        DB::table('users')->where('id', '=', $request['delid'])->delete();
 
         return redirect ('admin/users');
     }
+
+
+
     public function getLogout () {
         if (Auth::check()) {
             Auth::logout();
@@ -151,6 +155,15 @@ class UsersController extends Controller
         $dishes = User::find($user->id) -> dishes;
         return view ('users.getdishes', compact('dishes'));
     }
+
+    public function postChangepri(Request $request) {
+        $user =User::find($request['priid']);
+        $user->privilege = $request['privilege'];
+        $user->save();
+        return redirect('admin/users');
+    }
+
+
 }
 
 

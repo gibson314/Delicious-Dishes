@@ -12,6 +12,10 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
+
+    public function __contruct() {
+        $this->middleware('admin', ['only' => ['users']]);
+    }
    public function index () {
        return view ('admin.index');
    }

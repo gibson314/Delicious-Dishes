@@ -109,8 +109,9 @@ class FoodsController extends Controller
         return view ('foods.edit', compact ('food','elements','ele_count'));
     }
 
-    public function del ($name) {
-        Food::where('name',$name)->delete();
+    public function del (Request $request) {
+
+        Food::where('name',$request['delname'])->delete();
 
         return redirect ('/admin/foods');
     }
