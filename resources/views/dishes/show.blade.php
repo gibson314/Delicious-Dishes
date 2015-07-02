@@ -1,57 +1,127 @@
 
 @extends('layouts.dishmaster')
 @section('content')
-
-
     {!! link_to_route('dishes.edit', '编辑', $dish->id) !!}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span8">
+                <h1>
+                    {{$dish->name}}
+                </h1>
+                <hr>
+                <p>
+                    <a href="{{ url('/author',$dish->authorid) }}">{{$author->username}}</a><br>
+                    上传于{{$dish->publish_date}}
+                </p>
+                <hr>
+                <img src={{$dish->TitleImg}} alt='Dish Picture' height="300"/>
+                <hr>
+                <p><B>标签：</B>
+                    {{$dish->tag}}
+                </p>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td colspan="1" rowspan="2" scope="row" width="45%">
+                            <dl>
+                                <dt>菜品介绍:</dt>
+                                <hr>
+                                <dd>{{$dish->intro}}</dd>
+                            </dl>
+                        </td>
+                        <td colspan="1" rowspan="2" scope="row" width="15%">
+                        </td>
+                        <td>
+                            <dl>
+                                <dt>食材:</dt>
+                                <dd>
+                                    <hr>
+                                    @foreach($dishfoods as $dishfood)
+                                        <a href="{{ url('/foods',$dishfood->food_name) }}">{{$dishfood->food_name}}({{$dishfood->volume}})</a><br/>
+                                    @endforeach
+                                </dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <dl>
+                            <dt>工具:</dt>
+                            <dd>
+                                <hr>
+                                @foreach($utensils as $utensil)
+                                    {{$utensil->utensil_name}}<br/>
+                                @endforeach
+                            </dd>
+                        </dl>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <br>
 
-    <div class="container">
-        <table class="table">
-            <tbody>
+                <h4><B>步骤</B></h4>
+                <table class="table">
+                    <tbody>
+                    @foreach($steps as $step)
+                        <tr>
+                            <td scope="row" width="50%">
+                                <h5>Step {{$step->step_id}}:</h5> <hr> {{$step->description}}<br/>
+                            </td>
+                            <td scope="row">
+                                <a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </hr>
 
-            <tr>
-                <td colspan="2"><h1>{{$dish->name}}</h1></td>
-            </tr>
-            <tr>
-                <td colspan="2"><a href="{{ url('/author',$dish->authorid) }}">{{$author->username}}</a>上传于{{$dish->publish_date}}</td>
-            </tr>
-            <tr>
-            <td colspan="2" align="center" ><img src={{$dish->TitleImg}} alt='Dish Picture' height="300"/></td>
-            </tr>
-            <tr>
-                <td colspan="2"> {{$dish->intro}}</td>
-            </tr>
-            <tr>
-                <td>食材</td>
-                <td>     @foreach($dishfoods as $dishfood)
-                        <a href="{{ url('/foods',$dishfood->food_name) }}">{{$dishfood->food_name}}({{$dishfood->volume}})</a><br/>
-                    @endforeach</td>
-            </tr>
-            <tr>
-                <td>工具</td>
-                <td>     @foreach($utensils as $utensil)
-                        {{$utensil->utensil_name}}<br/>
-                    @endforeach</td>
-            </tr>
-            <tr>
-                <td>步骤</td>
-                <td>
-                    <ol>
-                        @foreach($steps as $step)
-                            <li/>{{$step->description}}<br/>
-                            <a href="{{ url($step->step_img) }}"><img src="{{$step->step_img}}"/></a>
-                        @endforeach</td>
-                    </ol>
-
-            </tr>
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
+                <p>
+                    <h4>小贴士：</h4>
+                    {{$dish->tips}}
+                </p>
+            </div>
+            <div class="span4">
+                <ul class="nav nav-list">
+                    <li class="nav-header">
+                        列表标题
+                    </li>
+                    <li class="active">
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">库</a>
+                    </li>
+                    <li>
+                        <a href="#">应用</a>
+                    </li>
+                    <li class="nav-header">
+                        功能列表
+                    </li>
+                    <li>
+                        <a href="#">资料</a>
+                    </li>
+                    <li>
+                        <a href="#">设置</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a href="#">帮助</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 @endsection
 
 @section('comments')
     <a name="comments"></a>
+    <br><br><br>
     <h2>评论</h2>
+
     <ol>
         @foreach($comments as $comment)
             <?php $cauthor=\App\User::where('id',$comment->author_id)->first();?>
@@ -77,6 +147,7 @@
         <input type="radio" name="rate" value=3>一般
         <input type="radio" name="rate" value=4>满意
         <input type="radio" name="rate" value=5>很满意
+        <hr>
         <textarea name="content" rows="10" class="form-control" required="required"></textarea>
         <br>
         <button class="btn btn-lg btn-info">提交评论</button>

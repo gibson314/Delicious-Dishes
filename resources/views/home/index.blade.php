@@ -62,15 +62,16 @@
                             <a href="{{ url('dishes') }}"><img alt="" src="../resources/imagines/home/index-img1.jpg" /></a><br/>
                             <div class="carousel-caption">
                                 <h4>
-                                    棒球
+                                    寿司
                                 </h4>
                                 <p>
-                                    棒球运动是一种以棒打球为主要特点，集体性、对抗性很强的球类运动项目，在美国、日本尤为盛行。
+                                    寿司（sushi），平假名写作すし，既可以作为小吃也可以作正餐，配料种类繁多。
+                                    寿司是日本传统美食之一，后传入朝鲜、韩国等地，其主要材料是用寿司醋调味过的维持在人体体温的饭块，再加上鱼肉，海鲜，蔬菜或鸡蛋等作配料，其味道鲜美，很受民众的喜爱。
                                 </p>
                             </div>
                         </div>
                         <div class="item">
-                            <img alt="" src="../resources/imagines/home/index-img2.jpg" />
+                            <a href="{{ url('dishes') }}"><img alt="" src="../resources/imagines/home/index-img2.jpg" /></a><br/>
                             <div class="carousel-caption">
                                 <h4>
                                     冲浪
@@ -81,13 +82,13 @@
                             </div>
                         </div>
                         <div class="item">
-                            <img alt="" src="../resources/imagines/home/index-img3.jpg" />
+                            <a href="{{ url('foods') }}"><img alt="" src="../resources/imagines/home/index-img3.jpg" /></a><br/>
                             <div class="carousel-caption">
                                 <h4>
-                                    自行车
+                                    鳕鱼
                                 </h4>
                                 <p>
-                                    以自行车为工具比赛骑行速度的体育运动。1896年第一届奥林匹克运动会上被列为正式比赛项目。环法赛为最著名的世界自行车锦标赛。
+                                    鳕鱼（学名：Gadus），又名鳘鱼，是主要食用鱼类之一。鳕鱼原产于从北欧至加拿大及美国东部的北大西洋寒冷水域。目前鳕鱼主要出产国是加拿大、冰岛、挪威及俄罗斯，日本产地主要在北海道。鳕鱼是全世界年捕捞量最大的鱼类之一，具有重要的经济价值。
                                 </p>
                             </div>
                         </div>
@@ -96,37 +97,10 @@
             </div>
         </div>
     </div>
-    <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <a class="btn btn-large btn-success" href="#">Get started today</a>
-    </div>
 
     <hr>
-
-    <!-- Example row of columns -->
-    <div class="row-fluid">
-        <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-    </div>
-
-    <hr>
-
     <div class="footer">
-        <p>&copy; Company 2013</p>
+        <p>&copy; LMY 2015</p>
     </div>
 
     </div> <!-- /container -->

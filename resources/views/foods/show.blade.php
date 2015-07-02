@@ -16,23 +16,93 @@
 </script>
 
 @section('content')
-
-    <h2>主题图片</h2>
-    <img src={{$food->img}} alt='Food Picture' />
-    <h1>食材信息</h1>
     {!! link_to_route('foods.edit', '编辑', $food->name) !!}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span8">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <img src={{$food->img}} alt='Food Picture' />
+                    </div>
+                    <div class="span6">
+                        <dl>
+                            <dt><h3>{{$food->name}}
+                            </h3>
+                            </dt>
+                            <dd>
+                                {{$food->intro}}
+                            </dd>
+
+                        </dl>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <table valign="middle" align="left">
+                            <tbody>
+                            <tr>
+                                <td scope="row" width="20%">
+                                    <B>库存：</B>
+                                </td>
+                                <td scope="row" width="30%">
+                                    {{$food->inventory}}{{$food->unit}}
+                                </td>
+                                <td scope="row" width="20%">
+                                    <B>单价：</B>
+                                </td>
+                                <td scope="row" width="30%">
+                                    {{$food->price}}元
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="span6">
+                        {{--购物车模块--}}
+                        <form action="{{ URL('foods/addtocart') }}" method="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <div class="container">
+                                <a href="javascript:addCount()">
+                                    添加</span>
+                                </a>
+
+                                <div id="count">
+                                    <input type=text name=count value=1 size="2">
+                                </div>
+                                <a href="javascript:delCount()">
+                                    减少
+                                </a>
+                            </div>
+
+                            <input type="hidden" name="food_name" value={{$food->name}}>
+
+
+                            <button class="btn btn-sm btn-info">添加到购物车</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+            </div>
+        </div>
+    </div>
+
+    {{--<h2>主题图片</h2>--}}
+    {{--<img src={{$food->img}} alt='Food Picture' />--}}
+    {{--<h1>食材信息</h1>--}}
+    {{----}}
 
 
 
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    {{--<br>--}}
+    {{--<br>--}}
+    {{--<br>--}}
+    {{--<br>--}}
+    {{--<br>--}}
 
-    <p>库存：{{$food->inventory}}{{$food->unit}}</p>
-    <p>单价：{{$food->price}}元</p>
+    {{--<p>库存：{{$food->inventory}}{{$food->unit}}</p>--}}
+    {{--<p>单价：{{$food->price}}元</p>--}}
 
 
 
@@ -73,25 +143,4 @@
             </tbody>
         </table>
     </div>
-    {{--购物车模块--}}
-    <form action="{{ URL('foods/addtocart') }}" method="POST">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="container">
-            <a href="javascript:addCount()">
-            添加</span>
-            </a>
-
-            <div id="count">
-                <input type=text name=count value=1 size="2">
-            </div>
-            <a href="javascript:delCount()">
-                减少
-            </a>
-        </div>
-
-        <input type="hidden" name="food_name" value={{$food->name}}>
-
-
-        <button class="btn btn-sm btn-info">添加到购物车</button>
-    </form>
 @endsection

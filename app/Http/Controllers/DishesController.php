@@ -116,7 +116,7 @@ class DishesController extends Controller
         $steps=DB::table('dishes')
             ->join('dish_step', 'dishes.id', '=', 'dish_step.dish_id')
             ->where('dishes.id', '=', $id)
-            ->select('dish_step.step_img','dish_step.description')
+            ->select('dish_step.step_img','dish_step.description','dish_step.step_id')
             ->get();
         $comments=DB::table('dishes')
             ->join('comments', 'dishes.id', '=', 'comments.dish_id')
