@@ -93,6 +93,12 @@ class FoodsController extends Controller
         return view ('foods.show', compact ('food','dishes','elements'));
     }
 
+    public function edit ($name) {
+        $food = Food::where('name',$name)->first();
+
+        return view ('foods.edit', compact ('food'));
+    }
+
     /*======================================
     **购物车模块
     /======================================*/
@@ -125,7 +131,7 @@ class FoodsController extends Controller
         }
         //$total=$carts->total;
         Cart::destroy();//清空购物车
-        return redirect ('dishes');//, compact ('total'));
+        return view ('foods/success',compact ('total'));
     }
 
     public function clear() {
