@@ -19,7 +19,7 @@
 //主页
 Route :: get ('/', 'HomeController@index');
 //about us
-Route :: get ('/about', 'HomeController@about');
+Route :: get ('/about', ['middleware' => 'login','HomeController@about']);
 
 //用户注册与登录
 Route :: controller ('users', 'UsersController');
@@ -39,7 +39,7 @@ Route :: controller ('users', 'UsersController');
 
 Route::post ('dishes/comments', 'DishesController@addcomment');
 //
-Route :: get ('dishes/', 'DishesController@index');
+Route :: get ('dishes/',  'DishesController@index');
 Route :: resource ('author', 'AuthorController');
 Route :: get ('query', 'QueryController@query');
 Route :: get ('hquery', 'QueryController@hquery');

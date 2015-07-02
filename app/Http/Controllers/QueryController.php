@@ -19,6 +19,13 @@ class QueryController extends Controller
      * @return Response
      */
 
+
+
+
+
+
+
+
     public function query()
 {
     return view ('query.query');

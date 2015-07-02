@@ -29,6 +29,9 @@
                 <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{url('/about')}}">About</a></li>
                 <li><a href="{{url('/')}}">Contact</a></li>
+                <li><a href="{{url('/dishes')}}">Dishes</a></li>
+                <li><a href="{{url('/foods')}}">Foods</a></li>
+                <li><a href="{{url('/query')}}">Query</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             @if (!Auth::check())

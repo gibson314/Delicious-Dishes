@@ -18,6 +18,21 @@ class FoodsController extends Controller
      *
      * @return Response
      */
+
+
+    //中间件，阻止无权限用户访问
+    public function __construct()
+    {
+//        $this->middleware('auth');
+
+//        $this->middleware('login', ['only' => ['create', 'barAction']]);
+
+        $this->middleware('login', ['except' => ['index', 'show']]);
+    }
+
+
+
+
     public function index()
     {
         $foods = Food::orderBy('name','asc')->paginate(10);

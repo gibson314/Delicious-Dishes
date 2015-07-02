@@ -12,6 +12,24 @@ use Hash;
 
 class UsersController extends Controller
 {
+
+
+    //中间件，阻止无权限用户访问
+    public function __construct()
+    {
+//        $this->middleware('auth');
+
+//        $this->middleware('login', ['only' => ['create', 'barAction']]);
+
+        $this->middleware('login', ['except' => ['getRegister', 'getLogin']]);
+
+    }
+
+
+
+
+
+
     //注册
     public function getRegister () {
         $message="欢迎注册！";
