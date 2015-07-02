@@ -4,6 +4,7 @@
     <h1>Query!!!!</h1>
 
     <hr/>
+    <a href="query"><button class="btn btn-sm btn-info">普通搜索</button></a>
 
 
     <div class="container">

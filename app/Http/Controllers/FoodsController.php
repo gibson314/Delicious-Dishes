@@ -152,7 +152,7 @@ class FoodsController extends Controller
         //validate the content
         DB::table('foods')
             ->where('name', $name)
-            ->update(['intro'=>$request['intro'],'detail'=>$request['detail'],'img'=>$request['img'],'inventory'=>$request['inventory'],'price'=>$request['price']]);
+            ->update(['intro'=>$request['intro'],'detail'=>$request['detail'],'img'=>$request['img'],'unit'=>$request['unit'],'inventory'=>$request['inventory'],'price'=>$request['price']]);
 
         return redirect ('foods');
     }

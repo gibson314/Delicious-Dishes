@@ -67,6 +67,11 @@
             </div>
 
             <div class="form-group">
+                {!! Form::label('unit', '单位:') !!}
+                {!! Form::text('unit', $food->unit, ['class'=>'form-control']) !!}
+            </div>
+
+            <div class="form-group">
                 {!! Form::label('price', '价格:') !!}
                 {!! Form::text('price', $food->price, ['class'=>'form-control']) !!}
             </div>

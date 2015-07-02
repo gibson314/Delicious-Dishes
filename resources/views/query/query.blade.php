@@ -4,6 +4,7 @@
     <h1>Query!!!!</h1>
 
     <hr/>
+    <a href="hquery"><button class="btn btn-sm btn-info">高级搜索</button></a>
 
 
     <div class="container">
