@@ -47,4 +47,5 @@
     <h4><a href="{{ url('/users/dishes') }}">{{ '我的菜谱'}}</a></h4>
     <h4><a href="{{ url('/users/favdishes') }}">{{ '我收藏的菜谱'}}</a></h4>
     <h4><a href="{{ url('/users/favfoods') }}">{{ '我收藏的食材'}}</a></h4>
+
 @endsection

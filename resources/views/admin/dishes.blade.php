@@ -1,5 +1,5 @@
 
-@extends ('layouts.dishmaster')
+@extends ('layouts.adminmaster')
 
 @section('content')
 
@@ -9,7 +9,7 @@
             <tr>
                 <th>菜谱编号</th>
                 <th>菜谱名称</th>
-                <th>菜谱图片</th>
+                <th>上传日期</th>
                 <th>菜谱简介</th>
                 <th>操作</th>
             </tr>
@@ -22,7 +22,7 @@
                         {{$dish->name}}
                     </td>
                     <td>
-                        {{$dish->img}}
+                        {{$dish->publish_date}}
                     </td>
                     <td>
                         {{$dish->intro}}

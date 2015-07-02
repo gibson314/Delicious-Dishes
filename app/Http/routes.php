@@ -72,10 +72,12 @@ Route :: resource ('foods', 'FoodsController');
 //=============================admin=========================
 Route::group(['prefix' => 'admin', 'middleware' => ['login', 'subadmin']], function()
 {
-    Route::get('/', 'AdminController@index');
+//    Route::get('/', 'AdminController@index');
+    Route::get('/index', 'AdminController@index');
     Route::get('/users', 'AdminController@users');
     Route::get('/foods', 'AdminController@foods');
     Route::get('/dishes', 'AdminController@dishes');
+
 
 });
 

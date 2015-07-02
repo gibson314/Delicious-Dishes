@@ -1,4 +1,4 @@
-@extends ('layouts.foodmaster')
+@extends ('layouts.adminmaster')
 
 @section('content')
     {{--@foreach ($foods as $food)--}}

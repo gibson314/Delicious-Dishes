@@ -86,8 +86,14 @@ class UsersController extends Controller
                 'password'=>$request['password']
             ])
         ) {
-            //重定向到个人中心，未实现
-            return redirect ('users/success');
+            if (Auth::user()->privilege == 4) {
+                return redirect ('admin/index');
+            }
+
+            else {
+                //重定向到个人中心，未实现
+                return redirect('users/success');
+            }
         }
         else {
             $message = "用户名或密码错误";
