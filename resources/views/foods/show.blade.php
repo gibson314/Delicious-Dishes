@@ -6,12 +6,13 @@
     var count = 1;
     function addCount() {
         count++;
-        document.getElementById('count').innerHTML = "<input type=text name=count value="+count+">";
+//        document.getElementById('count').innerHTML = "<input type=text name=count value="+count+">";
+        document.getElementById('count').innerHTML = "<input class=text_box name=count type=text value="+count+" style=width:50px; />";
     }
     function delCount(){
         if (count > 1)
             count--;
-        document.getElementById('count').innerHTML = "<input type=text name=count value="+count+">";
+        document.getElementById('count').innerHTML = "<input class=text_box name=count type=text value="+count+" style=width:50px; />";
     }
 </script>
 
@@ -61,8 +62,9 @@
                         </table>
                     </div>
                     <div class="span6">
+                        <div class="row-fluid">
                         {{--购物车模块--}}
-                        <form action="{{ URL('foods/addtocart') }}" method="">
+                        <form action="{{ URL('foods/addtocart') }}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row-fluid">
                                 <div class="span1" >
@@ -70,15 +72,14 @@
                                         +</span>
                                     </a>
                                 </div>
-                                <div class="span5">
-                                    <div class="span5" id="count">
-                                        <input type=text name=count value=1 maxlength=1 />
-                                    </div>
+                                <div class="span5" id="count">
+                                    <input class="text_box" name="goodnum" type="text" value=1 />
+
                                 </div>
-                                <div class="span1">
-                                    <a href="javascript:delCount()">
-                                        -
-                                    </a>
+                                <div class="span2">
+                                <a href="javascript:delCount()">
+                                -
+                                </a>
                                 </div>
                                 <div>
                                     <button class="btn btn-sm btn-info">添加到购物车</button>
@@ -88,6 +89,7 @@
                             <input type="hidden" name="food_name" value={{$food->name}}>
                             {{--<button class="btn btn-sm btn-info">添加到购物车</button>--}}
                         </form>
+                            </div>
                     </div>
                 </div>
                 <table class="table" contenteditable="false" valign="center">
