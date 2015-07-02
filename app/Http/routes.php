@@ -62,7 +62,7 @@ Route :: post ('foods/addtocart', 'FoodsController@addtocart');
 Route :: get ('foods/showcart', 'FoodsController@showcart');
 Route :: get ('foods/check', 'FoodsController@check');
 Route :: get ('foods/clear', 'FoodsController@clear');
-Route :: get ('foods/remove', 'FoodsController@remove');
+Route :: get ('foods/del', 'FoodsController@del');
 Route :: resource ('foods', 'FoodsController');
 
 
