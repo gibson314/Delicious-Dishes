@@ -41,6 +41,12 @@ Route::post ('dishes/comments', 'DishesController@addcomment');
 //
 Route :: get ('dishes/',  'DishesController@index');
 Route :: resource ('author', 'AuthorController');
+Route :: get ('query', 'QueryController@query');
+Route :: get ('hquery', 'QueryController@hquery');
+Route :: post ('query/dishes', 'QueryController@dishes');
+Route :: post ('query/foods', 'QueryController@foods');
+Route :: post ('query/author', 'QueryController@author');
+Route :: get ('query/dresult', 'QueryController@dresult');
 Route :: resource ('dishes', 'DishesController');
 Route :: resource ('foods', 'FoodsController');
 
