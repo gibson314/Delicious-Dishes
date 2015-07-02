@@ -1,5 +1,3 @@
-@extends('layouts.master')
-
 @section('content')
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="navbar navbar navbar-fixed-top">
@@ -24,16 +22,3 @@
     <div top="100px",width="500px">
         <p> </br></br></br></br></br></br></p>
     </div>
-
-<h1>About us</h1>
-
-
-{{$dish->name}}
-    {{$dish->tip}}
-    {{$dish->tag}}
-    {{$dish->intro}}
-    {{$dish->TitleImg}}
-
-
-@endsection
-

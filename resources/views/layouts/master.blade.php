@@ -99,6 +99,7 @@
 
 
 <body>
+<<<<<<< HEAD
 {{--<nav class="navbar navbar-default navbar-fixed-top" role="navigation">--}}
     {{--<div class="navbar navbar navbar-fixed-top">--}}
         {{--<div class="navbar-inner">--}}
@@ -138,6 +139,36 @@
         {{--}--}}
     {{--</style>--}}
 {{--</head>--}}
+=======
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="{{url('/')}}" class="navbar-brand">
+                Delicious Dishes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{url('/')}}">Home</a></li>
+                <li><a href="{{url('/about')}}">About</a></li>
+                <li><a href="{{url('/')}}">Contact</a></li>
+                <li><a href="{{url('/dishes')}}">Dishes</a></li>
+                <li><a href="{{url('/foods')}}">Foods</a></li>
+                <li><a href="{{url('/query')}}">Query</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            @if (!Auth::check())
+                <li><a href="{{ url('/users/login') }}">登录</a></li>
+                <li><a href="{{ url('/users/register') }}">注册</a></li>
+            @else
+                    <li><a href="{{ url('/users/profile') }}">个人中心</a></li>
+                <li><a href="{{ url('/users/logout') }}">退出</a></li>
+            @endif
+            </ul>
+        </div>
+    </div>
+</nav>
+>>>>>>> origin/master
 
 
 {{--<body>--}}

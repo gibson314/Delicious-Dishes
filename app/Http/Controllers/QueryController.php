@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class QueryController extends Controller
 {
@@ -17,6 +18,11 @@ class QueryController extends Controller
      *
      * @return Response
      */
+
+
+
+
+
 
     public function query()
 {
@@ -50,6 +56,100 @@ class QueryController extends Controller
     public function hquery()
     {
         return view ('query.hquery');
+    }
+
+    public function result(Request $request)
+    {
+        $dishes1=DB::table('dishes')
+            ->where('name','like','%'.$request['dishes1'].'%');
+        if($request['op1']=='and')
+        {
+            $dishes1=$dishes1->Where('name','like','%'.$request['dishes2'].'%')
+            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+        }
+        else if($request['op1']=='or')
+        {
+            $dishes1=$dishes1->orWhere('name','like','%'.$request['dishes2'].'%')
+                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+        }
+        else
+        {
+            $dishes1=$dishes1->where('name','not like','%'.$request['dishes2'].'%')
+                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+        }
+
+        if($request['op2']=='and')
+        {
+            $dishes1=$dishes1->Where('name','like','%'.$request['dishes2'].'%')
+                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+        }
+        else if($request['op2']=='or')
+        {
+            $dishes4 =DB::select('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
+                                  from food_dish,dishes
+                                  where food_dish.food_name = :id
+                                  and food_dish.dish_id=dishes.id', ['id' =>$request['foods1']]);
+            $dishes3 =DB::select('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date from food_dish,dishes where food_dish.food_name = :id and food_dish.dish_id=dishes.id', ['id' =>$request['foods2']]);
+            $dishes2=DB::statement('select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
+                                  from food_dish,dishes
+                                  where food_dish.food_name = :id
+                                  and food_dish.dish_id=dishes.id1
+                                  union
+                                  select distinct dishes.id,dishes.name,dishes.TitleImg,dishes.intro,dishes.authorid,dishes.publish_date
+                                  from food_dish,dishes
+                                  where food_dish.food_name = :id
+                                  and food_dish.dish_id=dishes.id2
+                                  ', ['id1' =>$request['foods1'],'id2' =>$request['foods2']]);
+//            $dishes2=DB::table('dishes','food_dish')
+//                ->where('food_name','=',$request['foods1']);
+//            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+//            $dishes2=$dishes1
+//                ->join('$dishes3','dishes.id','=','food_dish.dish_id')
+//                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+        }
+        else
+        {
+            $dishes1=$dishes1->where('name','not like','%'.$request['dishes2'].'%')
+                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date');
+        }
+//
+//        if($request['op2']=='and')
+//        {
+//            $dishes2=DB::select('select * from dishes where name=?',[$request['dishes1']]);
+//            echo($dishes2[1]);
+////            $dishes2=DB::table('dishes')
+////                ->join('food_dish','as','1','dishes.id','=','food_dish.dish_id')
+////                ->join('food_dish','as','2','dishes.id','=','food_dish.dish_id')
+////                ->where('food_dish.food_name','=',$request['foods1'])
+////                ->where('food_dish.food_name','=',$request['foods1'])
+////                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+////                ->get();
+//        }
+//        else if($request['op2']=='or')
+//        {
+//            $dishes2=DB::table('dishes')
+//                ->where('name','like','%'.$request['foods1'].'%')
+//                ->orWhere('name','like','%'.$request['foods2'].'%')
+//                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+//                ->intersect($dishes1)->get();
+//        }
+//        else
+//        {
+//            $dishes2=DB::table('dishes')
+//                ->where('name','like','%'.$request['foods1'].'%')
+//                ->where('name','not like','%'.$request['foods2'].'%')
+//                ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+//                ->intersect($dishes1)->get();
+//        }
+//        $dishes=DB::table('dishes')
+//            ->join('users','dishes.authorid','=','users.id')
+//            ->where('name','like','%'.$request['dishes1'].'%')
+//            ->orWhere('name','like','%'.$request['dishes2'].'%')
+//            ->orderBy('publish_date','desc')
+//            ->select('dishes.id','dishes.name','dishes.TitleImg','dishes.intro','dishes.authorid','dishes.publish_date')
+//            ->get();
+        $dishes=$dishes2;
+        return view('query.dresult')->with('dishes', $dishes);
     }
 
     /**

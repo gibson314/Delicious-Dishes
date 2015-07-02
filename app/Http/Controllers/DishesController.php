@@ -22,6 +22,18 @@ class DishesController extends Controller
      *
      * @return Response
      */
+
+
+//中间件，阻止无权限用户访问
+    public function __construct()
+    {
+//        $this->middleware('auth');
+
+//        $this->middleware('login', ['only' => ['create', 'barAction']]);
+
+        $this->middleware('login', ['except' => ['index', 'show']]);
+    }
+
     public function create () {
         return view ('dishes.create');
     }
@@ -123,6 +135,11 @@ class DishesController extends Controller
         return view ('dishes.edit', compact ('dish'));
     }
 
+    public function destroy ($id) {
+        DB::table('dishes')->where('id', '=', $id)->delete();
+
+        return redirect ('admin/dishes');
+    }
 
     public function addcomment (Request $request){
         $comment = new Comment;
@@ -132,8 +149,9 @@ class DishesController extends Controller
         $comment -> content = $request['content'];
         $comment -> dish_id = $request['dish_id'];
         $comment -> author_id = $user->id;
+        $comment -> rate = $request['rate'];
         $comment -> save();
-        return redirect (url('dishes',$comment->dish_id));
+        return redirect ('dishes/'.$comment->dish_id.'#comments');
     }
 
 }
