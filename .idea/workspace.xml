@@ -24,23 +24,13 @@
     <favorites_list name="dd" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47309646">
+    <splitter split-orientation="horizontal" split-proportion="0.5360406">
       <split-first>
         <leaf>
-          <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/dishes/show.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.714286" vertical-offset="2073" max-vertical-offset="3059">
-                  <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="DishesController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DishesController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.327586" vertical-offset="1818" max-vertical-offset="2926">
+                <state vertical-scroll-proportion="-13.107142" vertical-offset="1818" max-vertical-offset="2926">
                   <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
                   <folding />
                 </state>
@@ -50,28 +40,8 @@
           <file leaf-file-name="2015_06_30_065215_create_dish_step_table.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/database/migrations/2015_06_30_065215_create_dish_step_table.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="4.071429" vertical-offset="114" max-vertical-offset="950">
+                <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="950">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="hquery.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/query/hquery.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1254">
-                  <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fresult.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/query/fresult.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="285">
-                  <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -80,8 +50,18 @@
           <file leaf-file-name="dresult.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/query/dresult.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="323">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
                   <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dishmaster.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/layouts/dishmaster.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-4.678571" vertical-offset="1997" max-vertical-offset="3002">
+                  <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="130" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -90,8 +70,8 @@
           <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/foods/show.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8744493" vertical-offset="1123" max-vertical-offset="2869">
-                  <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+                <state vertical-scroll-proportion="0.6221122" vertical-offset="2150" max-vertical-offset="3952">
+                  <caret line="133" column="80" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
                   <folding />
                 </state>
               </provider>
@@ -100,7 +80,7 @@
           <file leaf-file-name="aresult.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/query/aresult.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="285">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
                   <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
                   <folding />
                 </state>
@@ -110,7 +90,7 @@
           <file leaf-file-name="query.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/query/query.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="1140">
+                <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1159">
                   <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
                   <folding />
                 </state>
@@ -120,7 +100,7 @@
           <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.107142" vertical-offset="1313" max-vertical-offset="2128">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="2128">
                   <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
                   <folding />
                 </state>
@@ -134,36 +114,29 @@
           <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
             <entry file="file://F:/About University/电院/02 数据库原理/Project/前端模板/bookshare-master/bookshare-master/application/views/include/header.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.3571428" vertical-offset="342" max-vertical-offset="1577">
+                <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1577">
                   <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/dishes/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4185022" vertical-offset="95" max-vertical-offset="1425">
-                  <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+                <state vertical-scroll-proportion="-0.6785714" vertical-offset="76" max-vertical-offset="1425">
+                  <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/dishes/show.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.6785714" vertical-offset="1235" max-vertical-offset="3059">
-                  <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-                  <folding>
-                    <marker date="1435855980000" expanded="true" signature="1241:1736" placeholder="..." />
-                    <marker date="1435855980000" expanded="true" signature="2501:3023" placeholder="..." />
-                    <marker date="1435855980000" expanded="true" signature="2501:2822" placeholder="..." />
-                    <marker date="1435855980000" expanded="true" signature="2501:2822" placeholder="..." />
-                    <marker date="1435855980000" expanded="true" signature="2822:2996" placeholder="..." />
-                    <marker date="1435855980000" expanded="true" signature="2822:2996" placeholder="..." />
-                  </folding>
+                <state vertical-scroll-proportion="0.34488449" vertical-offset="342" max-vertical-offset="3059">
+                  <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -261,9 +234,6 @@
       <command text="php artisan migrate" />
     </commandsHistory>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -290,7 +260,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2015_06_20_040757_create_foods_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_07_02_062723_create_trigger.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FoodsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/author/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/foods/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dishes/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dishes/edit.blade.php" />
@@ -310,13 +279,14 @@
         <option value="$PROJECT_DIR$/resources/views/home/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/blankmaster.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/dishmaster.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/foodmaster.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/querymaster.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/usermaster.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/query/hquery.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DishesController.php" />
         <option value="$PROJECT_DIR$/resources/views/dishes/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/foodmaster.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/author/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/foods/show.blade.php" />
       </list>
     </option>
@@ -359,7 +329,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -688,6 +657,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -715,6 +685,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -722,9 +695,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -746,27 +716,27 @@
     <frame x="66" y="-8" width="1308" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841328" sideWeight="0.5004916" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23761609" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22485207" sideWeight="0.49950835" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841328" sideWeight="0.5004916" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933578" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22485207" sideWeight="0.49950835" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -926,7 +896,7 @@
     </entry>
     <entry file="file://F:/About University/电院/02 数据库原理/Project/前端模板/bookshare-master/bookshare-master/application/views/include/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3571428" vertical-offset="342" max-vertical-offset="1577">
+        <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1577">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding />
         </state>
@@ -943,13 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.464286" vertical-offset="1140" max-vertical-offset="2147">
           <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/author/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286" vertical-offset="114" max-vertical-offset="760">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1007,7 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1197">
           <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,7 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="247">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.785714" vertical-offset="76" max-vertical-offset="1159">
           <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1055,22 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.5" vertical-offset="2111" max-vertical-offset="3021">
           <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/dishmaster.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.857142" vertical-offset="2054" max-vertical-offset="3002">
-          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/foodmaster.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.857142" vertical-offset="2054" max-vertical-offset="4579">
-          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1125,7 +1069,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/query/query.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="1140">
+        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1159">
           <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding />
         </state>
@@ -1133,7 +1077,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.107142" vertical-offset="1313" max-vertical-offset="2128">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="2128">
           <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
           <folding />
         </state>
@@ -1149,15 +1093,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_06_30_065215_create_dish_step_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.071429" vertical-offset="114" max-vertical-offset="950">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="950">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dishes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6785714" vertical-offset="76" max-vertical-offset="1425">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/foodmaster.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3729373" vertical-offset="1769" max-vertical-offset="4750">
+          <caret line="105" column="7" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/dishmaster.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.678571" vertical-offset="1997" max-vertical-offset="3002">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="130" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/author/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9372937" vertical-offset="40" max-vertical-offset="1064">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DishesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.327586" vertical-offset="1818" max-vertical-offset="2926">
+        <state vertical-scroll-proportion="-13.107142" vertical-offset="1818" max-vertical-offset="2926">
           <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding />
         </state>
@@ -1165,24 +1141,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dishes/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.714286" vertical-offset="2073" max-vertical-offset="3059">
-          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dishes/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4185022" vertical-offset="95" max-vertical-offset="1425">
-          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.34488449" vertical-offset="342" max-vertical-offset="3059">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/foods/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8744493" vertical-offset="1123" max-vertical-offset="2869">
-          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.6221122" vertical-offset="2150" max-vertical-offset="3952">
+          <caret line="133" column="80" selection-start-line="133" selection-start-column="80" selection-end-line="133" selection-end-column="80" />
           <folding />
         </state>
       </provider>

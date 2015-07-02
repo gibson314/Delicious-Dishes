@@ -93,7 +93,16 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://v2.bootcss.com//assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="http://v2.bootcss.com//assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="http://v2.bootcss.com//assets/ico/favicon.png">
-
+    <script>
+        window.onload = function(){
+            var text = document.getElementById('txt'),
+                    str = text.innerHTML,
+                    textLeng = 150;
+            if(str.length > textLeng ){
+                text .innerHTML = str.substring(0,150)+"... ...";
+            }
+        }
+    </script>
 </head>
 
 
