@@ -28,7 +28,7 @@
                         {{$user->id}}
                     </td>
                     <td>
-                        {{$user->username}}
+                        <a href="{{url('author',$user->id)}}">{{$user->username}}</a>
                     </td>
                     <td>
                         {{$user->email}}

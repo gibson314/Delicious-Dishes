@@ -100,7 +100,9 @@
 
     <hr>
     <div class="footer">
-        <p>&copy; LMY 2015</p>
+        Powered by PHP Technologies
+        <p>Copyright &copy; LMY 2015</p>
+        All rights reserved.
     </div>
 
     </div> <!-- /container -->

@@ -52,7 +52,14 @@
             @endforeach
         </table>
     </div>
-    <?php echo($dishes->render())?>
 
 
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="pagination pagination-centered pagination-large">
+                    <?php echo($dishes->render())?>                </div>
+            </div>
+        </div>
+    </div>
 @endsection

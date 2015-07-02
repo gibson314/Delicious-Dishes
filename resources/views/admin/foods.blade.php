@@ -20,10 +20,10 @@
             @foreach($foods as $food)
                 <tr>
                     <td>
-                        {{$food->name}}
+                        <a href="{{url('foods',$food->name)}}">{{$food->name}}</a>
                     </td>
                     <td>
-                        {{$food->img}}
+                        <img src="{{$food->img}}">
                     </td>
                     <td>
                         {{$food->intro}}
@@ -53,7 +53,15 @@
             @endforeach
         </table>
     </div>
-    <?php echo($foods->render())?>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="pagination pagination-centered pagination-large">
+                    <?php echo($foods->render())?>                </div>
+            </div>
+        </div>
+    </div>
 
 
 @endsection

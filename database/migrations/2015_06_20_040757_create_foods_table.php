@@ -16,9 +16,12 @@ class CreateFoodsTable extends Migration
 //            $table->increments('id');
             //$table->timestamps();
             $table -> string ('name');
-            $table -> text ('intro');
-            $table -> text('detail');
-            $table -> string ('img');
+            $table -> text ('intro') -> nullable();
+            $table -> text('detail')-> nullable();
+            $table -> string ('img')-> nullable();
+            $table -> integer ('inventory')->default("100");
+            $table -> double ('price')->default("8.99");
+            $table -> string('unit')->default("单位");
             $table -> primary('name');  //主键
 
         });
