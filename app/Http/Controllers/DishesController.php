@@ -151,6 +151,13 @@ class DishesController extends Controller
         return redirect ('/admin/dishes');
     }
 
+    public function dele (Request $request) {
+
+        Dish::where('id',$request['delid'])->delete();
+
+        return redirect ('users/dishes');
+    }
+
     public function addcomment (Request $request){
         $comment = new Comment;
 

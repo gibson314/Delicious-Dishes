@@ -54,6 +54,7 @@ Route :: post ('query/author', 'QueryController@author');
 //=============================Dishes=========================
 Route::post ('dishes/comments', 'DishesController@addcomment');
 Route :: get ('dishes/',  'DishesController@index');
+Route::post('dishes/dele', 'DishesController@dele');
 Route :: post ('dishes/del', 'DishesController@del');
 Route :: resource ('dishes', 'DishesController');
 

@@ -1,7 +1,7 @@
 
 @extends('layouts.dishmaster')
 @section('content')
-    {!! link_to_route('dishes.edit', '编辑', $dish->id) !!}
+    {{--{!! link_to_route('dishes.edit', '编辑', $dish->id) !!}--}}
 
 
 

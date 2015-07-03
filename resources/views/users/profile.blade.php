@@ -23,6 +23,13 @@
                     <tr>
                         <h4><a href="{{ url('/users/favfoods') }}">{{ '我收藏的食材'}}</a></h4>
                     </tr>
+                    @if (Auth::guest())
+                    @elseif (Auth::user()->privilege == 4)
+                    <hr>
+                    <tr>
+                        <h4><a href="{{ url('/admin/index') }}">{{ '后台管理'}}</a></h4>
+                    </tr>
+                    @endif
                     </tbody>
 
 
@@ -73,16 +80,4 @@
     {{--<li>出生日期： {{$user->birthday}}</li>--}}
     {{--<li>常住地： {{$user->place}}</li>--}}
 
-<<<<<<< HEAD
-    <h4><a href="{{ url('/users/moreinfo') }}">{{ '修改资料'}}</a></h4>
-    <h4><a href="{{ url('/users/dishes') }}">{{ '我的菜谱'}}</a></h4>
-    <h4><a href="{{ url('/users/favdishes') }}">{{ '我收藏的菜谱'}}</a></h4>
-    <h4><a href="{{ url('/users/favfoods') }}">{{ '我收藏的食材'}}</a></h4>
-
-=======
-    {{--<h4><a href="{{ url('/users/moreinfo') }}">{{ '修改资料'}}</a></h4>--}}
-    {{--<h4><a href="{{ url('/users/dishes') }}">{{ '我的菜谱'}}</a></h4>--}}
-    {{--<h4><a href="{{ url('/users/favdishes') }}">{{ '我收藏的菜谱'}}</a></h4>--}}
-    {{--<h4><a href="{{ url('/users/favfoods') }}">{{ '我收藏的食材'}}</a></h4>--}}
->>>>>>> origin/master
 @endsection

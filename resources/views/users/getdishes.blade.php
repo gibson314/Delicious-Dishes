@@ -42,12 +42,28 @@
                             <td>发表于{{$dish->publish_date}}<br></td>
                         </tr>
                         <tr>
-                            <th colspan="1" rowspan="2" scope="row">
+                            <th colspan="1" scope="row">
                                 <ul>
                                     <li>菜品简介</li>
                                 </ul>
                             </th>
                             <td>{{$dish->intro}}<br></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1" scope="row">
+                                <ul>
+                                    <li>操作</li>
+                                </ul>
+                            </th>
+
+                            <td>{!! link_to_route('dishes.edit', '编辑', $dish->id) !!}</td>
+
+
+                            <form action="{{ URL('dishes/dele') }}" method="POST">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="delid" value="{{$dish->id}}">
+                                <button class="btn btn-sm btn-info">删除</button>
+                            </form>
                         </tr>
                         </tbody>
                     </table>

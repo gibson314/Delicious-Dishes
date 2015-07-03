@@ -3,6 +3,7 @@
 @section('content')
     <h2>菜单列表</h2>
         <hr>
+    <a href="{{url('/dishes/create')}}">创建新菜谱</a>
         @foreach ($dishes as $dish)
             <div class="Empty">
                 <p></br></p>

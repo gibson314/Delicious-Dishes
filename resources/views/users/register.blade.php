@@ -18,6 +18,8 @@
     @endif
 
     <form method="POST" action="http://localhost/dd/public/users/create" accept-charset="UTF-8" class="form-signup"><input name="_token" type="hidden" value="3w0XNqiEGT0gaTQeNaext7rPS16Ps8mlNOM5HWXv">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         <div class="container">
             <fieldset>
                 <div class="form-group">
