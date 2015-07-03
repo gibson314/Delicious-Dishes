@@ -3,9 +3,9 @@
 @section('content')
     <h1>购物车</h1>
     <br>
-    <button class="btn btn-middle" type="submit"><a href="{{url('foods')}}">继续购物</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button class="btn btn-middle" type="submit"><a href="{{url('foods/check')}}">结账</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button class="btn btn-middle" type="submit"><a href="{{url('foods/clear')}}">清空购物车</a></button>
+    <a href="{{url('foods')}}"><button class="btn btn-middle" type="submit">继续购物</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{{url('foods/check')}}"><button class="btn btn-middle" type="submit">结账</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{{url('foods/clear')}}"><button class="btn btn-middle" type="submit">清空购物车</button></a>
     <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
     <div style="text-align: center">
         <table valign="middle">

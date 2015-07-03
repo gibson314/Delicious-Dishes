@@ -33,7 +33,7 @@ class DishesController extends Controller
 
         $this->middleware('login', ['except' => ['index', 'show']]);
         $this->middleware('eliteuser', ['except' => [
-            'index', 'show', 'create', 'store'
+            'index', 'show', 'create', 'store', 'addcomment'
         ]]);
     }
 

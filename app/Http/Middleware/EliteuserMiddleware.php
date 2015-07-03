@@ -20,8 +20,8 @@ class EliteuserMiddleware
                 return response('Unauthorized!', 401);
             } else {
 //                return redirect()->guest('users/login');
-                $message = "你没有此权限访问该页面，请使用管理员账号登录";
-                return view ('users/login', compact('message'));
+//                $message = "你没有此权限访问该页面，请使用管理员账号登录";
+                return view ('users/moreinfo');
             }
         }
 

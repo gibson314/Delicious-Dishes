@@ -14,6 +14,8 @@
         </div>
     @endif
     <form method="POST" action="http://localhost/dd/public/users/update" accept-charset="UTF-8" class="form-signup"><input name="_token" type="hidden" value="3w0XNqiEGT0gaTQeNaext7rPS16Ps8mlNOM5HWXv">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span1"></div>
@@ -28,17 +30,17 @@
 
                         <div class="form-group">
                             <label for="age">年龄:</label>
-                            <input class="form-control" name="age" type="text" id="age">
+                            <input class="form-control" name="age" type="text" id="age" value={{$user->age}}>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="birthday">出生日期:</label>
-                            <input class="form-control" name="birthday" type="text" id="birthday">
+                            <input class="form-control" name="birthday" type="text" id="birthday" value={{$user->birthday}}>
                         </div><br>
 
                         <div class="form-group">
                             <label for="place">长期居住地:</label>
-                            <input class="form-control" name="place" type="text" id="place">
+                            <input class="form-control" name="place" type="text" id="place" value={{$user->place}}>
                         </div><br>
 
                         <input class="btn btn-large btn-success" type="submit" value="提交">

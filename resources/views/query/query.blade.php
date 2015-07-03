@@ -17,6 +17,8 @@
     <div class="container" style="text-align: center">
         <fieldset>
             <form method="POST" action="http://localhost/dd/public/query/dishes" accept-charset="UTF-8"><input name="_token" type="hidden" value="3w0XNqiEGT0gaTQeNaext7rPS16Ps8mlNOM5HWXv">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 <div class="form-group">
                     关键词：
                     {{--<label for="name">关键词:</label>--}}&nbsp;&nbsp;&nbsp;&nbsp;
@@ -32,6 +34,8 @@
         <br>
         <fieldset>
             <form method="POST" action="http://localhost/dd/public/query/foods" accept-charset="UTF-8"><input name="_token" type="hidden" value="3w0XNqiEGT0gaTQeNaext7rPS16Ps8mlNOM5HWXv">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 <div class="form-group">
                     关键词：
                     {{--<label for="name">关键词:</label>--}}&nbsp;&nbsp;&nbsp;&nbsp;
@@ -44,6 +48,8 @@
         <br>
         <fieldset>
             <form method="POST" action="http://localhost/dd/public/query/author" accept-charset="UTF-8"><input name="_token" type="hidden" value="3w0XNqiEGT0gaTQeNaext7rPS16Ps8mlNOM5HWXv">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 <div class="form-group">
                     作者名：
                     {{--<label for="name">作者名:</label>--}}&nbsp;&nbsp;&nbsp;&nbsp;

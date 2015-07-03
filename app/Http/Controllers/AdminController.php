@@ -27,7 +27,7 @@ class AdminController extends Controller
     }
 
     public function dishes () {
-        $dishes = Dish::paginate(10);
+        $dishes = Dish::orderby('id','desc')->paginate(10);
         $dishes->setPath('dishes');
         return view ('admin.dishes', compact('dishes'));
     }

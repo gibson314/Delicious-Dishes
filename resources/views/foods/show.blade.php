@@ -17,7 +17,7 @@
 </script>
 
 @section('content')
-    {!! link_to_route('foods.edit', '编辑', $food->name) !!}
+    {{--{!! link_to_route('foods.edit', '编辑', $food->name) !!}--}}
 
     <div class="container-fluid">
         <div class="row-fluid">
@@ -48,7 +48,7 @@
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="food_name" value="{{$food->name}}">
                                             <button class="btn btn-middle btn-info">收藏</button>
-                                            <button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>
+                                            {{--<button class="btn btn-lg btn-info"><img src="/resources/image/before.png"></button>--}}
 
                                         </form>
                                     @endif
@@ -204,7 +204,7 @@
                 @endforeach
                 总价：{{$total}}
                 <br><br>
-                <button class="btn btn-middle" type="submit"><a href="{{url('foods/showcart')}}">结算</a></button>
+                <a href="{{url('foods/showcart')}}"><button class="btn btn-middle" type="submit">结算</button></a>
                     {{--</div>--}}
                 {{--</div>--}}
                     {{--</nav>--}}

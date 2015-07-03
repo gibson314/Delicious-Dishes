@@ -43,6 +43,8 @@
             <div class="span8">
                 <fieldset>
                     <form method="POST" action="http://localhost/dd/public/foods" accept-charset="UTF-8"><input name="_token" type="hidden" value="3w0XNqiEGT0gaTQeNaext7rPS16Ps8mlNOM5HWXv">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                         <div class="form-group">
                             <label for="name">名称:</label>
                             <input class="form-control" name="name" type="text" id="name">

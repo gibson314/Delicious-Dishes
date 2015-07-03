@@ -148,7 +148,7 @@
                 @endforeach
                 总价：{{$total}}
                 <br><br>
-                <button class="btn btn-middle" type="submit"><a href="{{url('foods/showcart')}}">结算</a></button>
+                <a href="{{url('foods/showcart')}}"><button class="btn btn-middle" type="submit">结算</button></a>
             </div>
         </div>
     </div>

@@ -19,7 +19,8 @@
                         {{$dish->id}}
                     </td>
                     <td>
-                        {{$dish->name}}
+                        <a href="{{url('dishes',$dish->id)}}">{{$dish->name}}
+                        </a>
                     </td>
                     <td>
                         {{$dish->publish_date}}

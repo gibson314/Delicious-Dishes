@@ -194,10 +194,10 @@
                             <label for="tip">小贴士:</label>
                             <textarea name="tip"  id="txtLy" rows="3" class="form-control" required="required" ></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="TitleImg">名称:</label>
-                            <input class="form-control" name="TitleImg" type="text" id="TitleImg">
-                        </div>
+                        {{--<div class="form-group">--}}
+                            {{--<label for="TitleImg">名称:</label>--}}
+                            {{--<input class="form-control" name="TitleImg" type="text" id="TitleImg">--}}
+                        {{--</div>--}}
 
 
 
@@ -209,7 +209,7 @@
 
                         <div class="form-group">
                             <label for="img">图片(URL):</label>
-                            <input class="form-control" name="img" type="text" id="img">
+                            <input class="form-control" name="TitleImg" type="text" id="img">
                         </div>
                         <input class="btn btn-lg" type="submit" value="提交">
 
